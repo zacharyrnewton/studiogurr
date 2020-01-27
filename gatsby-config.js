@@ -5,12 +5,15 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+        name:  `fonts`,
+        path: `${__dirname}/src/fonts`,
       },
     },
     `gatsby-transformer-sharp`,
