@@ -23,7 +23,7 @@ const Footer = ({ siteTitle }) => (
     <ul>
       <li><b>Sneak peak</b></li>
       <li><a href="https://instagram.com/studiogurr" target="_blank" rel="noopener noreferrer">@StudioGurr</a></li>
-      <li>© {new Date().getFullYear()}, Studio Gurr</li>
+      <li>© {new Date().getFullYear()} Studio Gurr</li>
     </ul>
     <ul>
       <li><b>Start a project</b></li>
