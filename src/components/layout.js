@@ -10,8 +10,10 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Footer from "./footer"
 
 import "../sass/config/config.sass"
+import style from "../sass/modules/layout.module.sass"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -26,8 +28,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
+      <div className={style.layoutGrid}>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <main className={style.main}>{children}</main>
+        <Footer/>
+      </div>
     </>
   )
 }

@@ -1,0 +1,45 @@
+@import "../config/vars"
+
+
+.footer
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+  justify-items: start
+  align-items: stretch
+  row-gap: 32px
+  margin: 128px 128px 128px 128px
+  .logo
+    width: 200px
+  ul.footerList
+    display: block
+    position: relative
+    list-style: none
+    padding: 0 0 0 24px
+    margin: 0 64px 0 0
+    max-width: 250px
+    color: var(--color-base-alt, $color-base-alt)
+    box-sizing: border-box
+    li
+      padding: 0
+      margin: 0
+      width: 100%
+      color: inherit
+      a
+        color: inherit
+
+    span.line
+      position: absolute
+      display: block
+      width: 1px
+      background-color: var(--color-base-alt, $color-base-alt)
+      top: 0
+      left: 0
+      bottom: 0
+
+@media screen and (max-width: 1000px)
+  .footer
+    margin: 64px 64px 64px 64px
+
+@media screen and (max-width: 750px)
+  .footer
+    margin: 32px 32px 64px 32px
