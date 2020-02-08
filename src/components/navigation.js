@@ -1,10 +1,10 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import style from "../sass/modules/footer.module.sass"
+import style from "../sass/modules/navigation.module.sass"
 
-const Footer = ({ siteTitle }) => (
-  <footer className={style.footer}>
+const Navigation = ({ siteTitle }) => (
+  <nav className={style.navigation} id="navigation">
     <Link to="/" className={style.logo}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 73.515">
         <g transform="translate(0)">
@@ -21,36 +21,20 @@ const Footer = ({ siteTitle }) => (
         </g>
       </svg>
     </Link>
-    {/*}<ul className={style.footerList}>
-      <span className={style.line}></span>
-      <li className={style.footerListTitle}><a href="#navigation">↑</a></li>
-    </ul>*/}
-    <ul className={style.footerList}>
-      <span className={style.line}></span>
-      <li className={style.footerListTitle}><b>Sneak peak</b></li>
-      <li><a href="https://instagram.com/studiogurr" target="_blank" rel="noopener noreferrer">@StudioGurr</a></li>
-      <li>© {new Date().getFullYear()} Studio Gurr</li>
-    </ul>
-    <ul className={style.footerList}>
-      <span className={style.line}></span>
-      <li className={style.footerListTitle}><b>Start a project</b></li>
-      <li><a href="tel:+1954-632-6367" target="_blank" rel="noopener noreferrer">+1 (954) 632-6367</a></li>
-      <li><a href="mailto:david@studiogurr.com" target="_blank" rel="noopener noreferrer">David@StudioGurr.com</a></li>
-    </ul>
-    <ul className={style.footerList}>
-      <span className={style.line}></span>
-      <li className={style.footerListTitle}><b>By appointment only</b></li>
-      <li><a href="https://goo.gl/maps/2iCcVYhYfqkwpkcq5" target="_blank" rel="noopener noreferrer">980 N Federal Hwy #110<br/>Boca Raton, FL USA 33432</a></li>
-    </ul>
-  </footer>
+    <Link to="/" className={style.navigationListTitle}><span className={style.line}></span><b>Home</b></Link>
+    {/*<Link to="/archive" className={style.navigationListTitle}><span className={style.line}></span><b>Archive</b></Link>
+    <Link to="/blog" className={style.navigationListTitle}><span className={style.line}></span><b>Blog</b></Link>*/}
+    <Link to="/about" className={style.navigationListTitle}><span className={style.line}></span><b>About</b></Link>
+    <Link to="/contact" className={style.navigationListTitle}><span className={style.line}></span><b>Contact</b></Link>
+  </nav>
 )
 
-Footer.propTypes = {
+Navigation.propTypes = {
   siteTitle: PropTypes.string,
 }
 
-Footer.defaultProps = {
+Navigation.defaultProps = {
   siteTitle: ``,
 }
 
-export default Footer
+export default Navigation
