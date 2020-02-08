@@ -16,6 +16,11 @@ import Footer from "./footer"
 import "../sass/config/config.sass"
 import style from "../sass/modules/layout.module.sass"
 
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+}
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -29,8 +34,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <div className={style.layoutGrid}>
-        <Header siteTitle={data.site.siteMetadata.title} />
+      <div className={style.layoutGrid} id="pageTop">
+        <Navigation siteTitle={data.site.siteMetadata.title} />
         <main className={style.main}>{children}</main>
         <Footer/>
       </div>

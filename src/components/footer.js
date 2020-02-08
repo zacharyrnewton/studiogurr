@@ -21,10 +21,10 @@ const Footer = ({ siteTitle }) => (
         </g>
       </svg>
     </Link>
-    {/*}<ul className={style.footerList}>
+    <ul className={style.footerList}>
       <span className={style.line}></span>
-      <li className={style.footerListTitle}><a href="#navigation">↑</a></li>
-    </ul>*/}
+      <li className={style.footerListTitle}><Link to="#pageTop">↑</Link></li>
+    </ul>
     <ul className={style.footerList}>
       <span className={style.line}></span>
       <li className={style.footerListTitle}><b>Sneak peak</b></li>

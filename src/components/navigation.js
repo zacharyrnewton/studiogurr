@@ -4,7 +4,7 @@ import React from "react"
 import style from "../sass/modules/navigation.module.sass"
 
 const Navigation = ({ siteTitle }) => (
-  <nav className={style.navigation} id="navigation">
+  <nav className={style.navigation}>
     <Link to="/" className={style.logo}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 73.515">
         <g transform="translate(0)">
