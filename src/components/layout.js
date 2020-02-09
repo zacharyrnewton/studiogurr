@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <div className={style.layoutGrid} id="pageTop">
-        <Navigation siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title} />
         <main className={style.main}>{children}</main>
         <Footer/>
       </div>
