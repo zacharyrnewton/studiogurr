@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+// import Header from "./header"
 import Navigation from "./navigation"
 import Footer from "./footer"
 
@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <div className={style.layoutGrid} id="pageTop">
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Navigation siteTitle={data.site.siteMetadata.title} />
         <main className={style.main}>{children}</main>
         <Footer/>
       </div>
