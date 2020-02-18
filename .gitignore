@@ -66,7 +66,7 @@ node_modules/
 .DS_Store
 
 # Gatsby cache
-.cache
+# .cache
 
 # Gatsby public
-public
+# public
