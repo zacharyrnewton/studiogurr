@@ -1,3 +1,4 @@
+const path = require(`path`)
 const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
 console.log(`Using environment config: '${activeEnv}'`)
 
@@ -18,10 +19,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `fonts`,
+        path: `${__dirname}/src/fonts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-        name:  `fonts`,
-        path: `${__dirname}/src/fonts`,
       },
     },
     `gatsby-transformer-sharp`,
