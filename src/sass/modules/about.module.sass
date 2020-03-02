@@ -28,5 +28,22 @@
 @media screen and (max-width: 800px)
   .aboutWrapper
     grid-template-columns: 1fr
+    .content
+      p
+        font-size: 1.5rem
+        line-height: 1.875rem
+      a.contact
+        width: 100%
+        text-align: center
+        font-size: 1.5rem
+        line-height: 1.875rem
+        padding: 20px 0
+        &:hover
+          font-style: normal
+          text-align: center
+          font-size: 1.5rem
+          line-height: 1.875rem
+          background: var(--color-base-alt, $color-base-alt)
+          color: var(--color-base, $color-base)
     .image
       display: none

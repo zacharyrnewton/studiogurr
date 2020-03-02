@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 
-import Layout from "../components/layout"
+import Layout from "../components/layout-without-footer"
 import SEO from "../components/seo"
 import style from "../sass/modules/about.module.sass"
 

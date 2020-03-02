@@ -3,8 +3,18 @@ import PropTypes from "prop-types"
 import React from "react"
 import style from "../sass/modules/navigation.module.sass"
 
+
+function mobileNavToggle() {
+  const navItems = document.getElementById('navItems');
+  if (navItems.className === style.navigation) {
+    navItems.className = style.navigation + ' ' + style.active;
+  } else {
+    navItems.className = style.navigation;
+  }
+}
+
 const Navigation = ({ siteTitle }) => (
-  <nav className={style.navigation}>
+  <nav className={style.navigation} id="navItems">
     <Link to="/" className={style.logo}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 73.515">
         <g transform="translate(0)">
@@ -21,11 +31,29 @@ const Navigation = ({ siteTitle }) => (
         </g>
       </svg>
     </Link>
-    <Link to="/" className={style.navigationListTitle}><span className={style.line}></span><b>Home</b></Link>
-    {/*<Link to="/archive" className={style.navigationListTitle}><span className={style.line}></span><b>Archive</b></Link>
-    <Link to="/blog" className={style.navigationListTitle}><span className={style.line}></span><b>Blog</b></Link>*/}
-    <Link to="/about" className={style.navigationListTitle}><span className={style.line}></span><b>About</b></Link>
-    <Link to="/contact" className={style.navigationListTitle}><span className={style.line}></span><b>Contact</b></Link>
+    <ul>
+      <li><Link to="/" className={style.navigationListTitle}><span className={style.line}></span><b>Home</b></Link></li>
+      {/*<Link to="/archive" className={style.navigationListTitle}><span className={style.line}></span><b>Archive</b></Link>
+      <Link to="/blog" className={style.navigationListTitle}><span className={style.line}></span><b>Blog</b></Link>*/}
+      <li><Link to="/about" className={style.navigationListTitle}><span className={style.line}></span><b>About</b></Link></li>
+      <li><Link to="/contact" className={style.navigationListTitle}><span className={style.line}></span><b>Contact</b></Link></li>
+    </ul>
+    <button className={style.hamburgerOpen} onClick={mobileNavToggle}>Toggle Navigation Open
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+        <g transform="translate(-431 -50)">
+          <g transform="translate(439 58)">
+            <path d="M0,0H24V24H0Z" fill="none"/>
+            <path className={style.path} d="M3,18H21V16H3Zm0-5H21V11H3ZM3,6V8H21V6Z" fill="#1f2127"/>
+          </g>
+        </g>
+      </svg>
+    </button>
+    <button className={style.hamburgerClose} id="hamburgerClose" onClick={mobileNavToggle}>Toggle Navigation Closed
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path className={style.path} d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+    </button>
   </nav>
 )
 
