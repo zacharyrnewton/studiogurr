@@ -2,11 +2,11 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import Layout from "../components/layout-without-footer"
+import Layout from "../components/layout"
 import SEO from "../components/seo"
 import style from "../sass/modules/contact.module.sass"
 
-const IndexPage = (data) => (
+const ContactPage = (data) => (
   <Layout>
     <SEO title="Contact" />
     <div className={style.contactWrapper}>
@@ -54,4 +54,4 @@ const IndexPage = (data) => (
   </Layout>
 )
 
-export default IndexPage
+export default ContactPage

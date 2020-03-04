@@ -3,11 +3,11 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 
-import Layout from "../components/layout-without-footer"
+import Layout from "../components/layout"
 import SEO from "../components/seo"
 import style from "../sass/modules/about.module.sass"
 
-const IndexPage = (data) => (
+const AboutPage = (data) => (
   <Layout>
     <SEO title="About" />
     <div className={style.aboutWrapper}>
@@ -56,4 +56,4 @@ const IndexPage = (data) => (
 )
 
 
-export default IndexPage
+export default AboutPage

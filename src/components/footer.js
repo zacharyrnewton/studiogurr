@@ -21,33 +21,52 @@ const Footer = ({ siteTitle }) => (
         </g>
       </svg>
     </Link>
-    {/*<ul className={style.footerList}>
-      <li><span className={style.line}></span></li>
-      <li className={style.footerListTitle}><Link to="#pageTop">↑</Link></li>
-    </ul>*/}
-    <ul className={style.footerList}>
-      <li><span className={style.line}></span></li>
-      <li className={style.footerListTitle}><b>Sneak peak</b></li>
-      <li><a href="https://instagram.com/studiogurr" target="_blank" rel="noopener noreferrer">@StudioGurr</a></li>
-      <li>© {new Date().getFullYear()} Studio Gurr</li>
+    <ul className={style.footerListWrapper}>
+      {/*<li className={style.footerListContainer}>
+        <ul className={style.footerList}>
+          <li><span className={style.line}></span></li>
+          <li className={style.footerListTitle}><Link to="#pageTop">↑</Link></li>
+        </ul>
+      </li>
+      <li className={style.footerListContainer}>
+        <ul className={style.footerList}>
+          <li><span className={style.line}></span></li>
+          <li className={style.footerListTitle}><b>Sneak peak</b></li>
+          <li><a href="https://instagram.com/studiogurr" target="_blank" rel="noopener noreferrer">@StudioGurr</a></li>
+          <li>© {new Date().getFullYear()} Studio Gurr</li>
+        </ul>
+      </li>*/}
+      <li className={style.footerListContainer}>
+        <ul className={style.footerList}>
+          <li><span className={style.line}></span></li>
+          <li className={style.footerListTitle}><b>Start a project</b></li>
+          <li><a href="tel:+1833-638-4877" target="_blank" rel="noopener noreferrer">+1 (833) 638-4877</a></li>
+          <li><a href="mailto:david@studiogurr.com" target="_blank" rel="noopener noreferrer">David@StudioGurr.com</a></li>
+        </ul>
+      </li>
+      <li className={style.footerListContainer}>
+        <ul className={style.footerList}>
+          <li><span className={style.line}></span></li>
+          <li className={style.footerListTitle}><b>By appointment only</b></li>
+          <li><a href="https://goo.gl/maps/2iCcVYhYfqkwpkcq5" target="_blank" rel="noopener noreferrer">980 N Federal Hwy #110<br/>Boca Raton, FL USA 33432</a></li>
+        </ul>
+      </li>
+      <li className={style.footerListContainer}>
+        <ul className={style.footerList}>
+          <li><Link to="/archive" className={style.navigationListTitle}><span className={style.line}></span><b>Archive</b></Link></li>
+        </ul>
+      </li>
+      <li className={style.footerListContainer}>
+        <ul className={style.footerList}>
+          <li><Link to="/about" className={style.navigationListTitle}><span className={style.line}></span><b>About</b></Link></li>
+        </ul>
+      </li>
+      {/*<li className={style.footerListContainer}>
+        <ul className={style.footerList}>
+          <li><Link to="/contact" className={style.navigationListTitle}><span className={style.line}></span><b>Contact</b></Link></li>
+        </ul>
+      </li>*/}
     </ul>
-    <ul className={style.footerList}>
-      <li><span className={style.line}></span></li>
-      <li className={style.footerListTitle}><b>Start a project</b></li>
-      <li><a href="tel:+1833-638-4877" target="_blank" rel="noopener noreferrer">+1 (833) 638-4877</a></li>
-      <li><a href="mailto:david@studiogurr.com" target="_blank" rel="noopener noreferrer">David@StudioGurr.com</a></li>
-    </ul>
-    <ul className={style.footerList}>
-      <li><span className={style.line}></span></li>
-      <li className={style.footerListTitle}><b>By appointment only</b></li>
-      <li><a href="https://goo.gl/maps/2iCcVYhYfqkwpkcq5" target="_blank" rel="noopener noreferrer">980 N Federal Hwy #110<br/>Boca Raton, FL USA 33432</a></li>
-    </ul>
-    {/*<ul className={style.footerList}>
-      <li><Link to="/about" className={style.navigationListTitle}><span className={style.line}></span><b>About</b></Link></li>
-    </ul>
-    <ul className={style.footerList}>
-      <li><Link to="/contact" className={style.navigationListTitle}><span className={style.line}></span><b>Contact</b></Link></li>
-    </ul>*/}
   </footer>
 )
 

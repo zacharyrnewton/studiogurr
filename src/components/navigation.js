@@ -33,8 +33,8 @@ const Navigation = ({ siteTitle }) => (
     </Link>
     <ul>
       <li><Link to="/" className={style.navigationListTitle}><span className={style.line}></span><b>Home</b></Link></li>
-      {/*<Link to="/archive" className={style.navigationListTitle}><span className={style.line}></span><b>Archive</b></Link>
-      <Link to="/blog" className={style.navigationListTitle}><span className={style.line}></span><b>Blog</b></Link>*/}
+      <li><Link to="/archive" className={style.navigationListTitle}><span className={style.line}></span><b>Archive</b></Link></li>
+      {/*<li><Link to="/blog" className={style.navigationListTitle}><span className={style.line}></span><b>Blog</b></Link></li>*/}
       <li><Link to="/about" className={style.navigationListTitle}><span className={style.line}></span><b>About</b></Link></li>
       <li><Link to="/contact" className={style.navigationListTitle}><span className={style.line}></span><b>Contact</b></Link></li>
     </ul>
