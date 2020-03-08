@@ -45,6 +45,21 @@ module.exports = {
       },
     },
     `gatsby-plugin-cname`,
+    {
+      resolve: `gatsby-source-prismic-graphql`,
+      options: {
+        repositoryName: 'studiogurr', // (REQUIRED, replace with your own)
+        accessToken: process.env.PRISMIC_API_TOKEN, // (optional API access token)
+        // path: '/preview', // (optional preview path. Default: /preview)
+        // previews: true, // (optional, activated Previews. Default: false)
+        // pages: [{ // (optional, builds pages dynamically)
+        //   type: 'Archive',         // TypeName from prismic
+        //   match: '/archive/:uid',  // Pages will be generated under this pattern
+        //   path: '/archive',        // Placeholder page for unpublished documents
+          // component: require.resolve('./src/templates/article.js'),
+        // }],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
