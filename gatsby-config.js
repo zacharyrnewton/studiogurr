@@ -48,8 +48,8 @@ module.exports = {
     {
       resolve: `gatsby-source-prismic-graphql`,
       options: {
-        repositoryName: 'studiogurr', // (REQUIRED, replace with your own)
-        accessToken: process.env.PRISMIC_API_TOKEN, // (optional API access token)
+        repositoryName: process.env.PRISMIC_REPOSITORY_NAME, // (REQUIRED, replace with your own)
+        accessToken: process.env.PRISMIC_ACCESS_TOKEN, // (optional API access token)
         // path: '/preview', // (optional preview path. Default: /preview)
         // previews: true, // (optional, activated Previews. Default: false)
         // pages: [{ // (optional, builds pages dynamically)
