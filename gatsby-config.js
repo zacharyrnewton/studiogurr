@@ -50,13 +50,13 @@ module.exports = {
       options: {
         repositoryName: process.env.PRISMIC_REPOSITORY_NAME, // (REQUIRED, replace with your own)
         accessToken: process.env.PRISMIC_ACCESS_TOKEN, // (optional API access token)
-        // path: '/preview', // (optional preview path. Default: /preview)
-        // previews: true, // (optional, activated Previews. Default: false)
+        path: '/preview', // (optional preview path. Default: /preview)
+        previews: true, // (optional, activated Previews. Default: false)
         // pages: [{ // (optional, builds pages dynamically)
         //   type: 'Archive',         // TypeName from prismic
         //   match: '/archive/:uid',  // Pages will be generated under this pattern
-        //   path: '/archive',        // Placeholder page for unpublished documents
-          // component: require.resolve('./src/templates/article.js'),
+        //   path: '/archive/draft',        // Placeholder page for unpublished documents
+        //   component: require.resolve('./src/templates/archive.js'),
         // }],
       },
     },

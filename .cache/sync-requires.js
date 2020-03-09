@@ -6,6 +6,8 @@ const preferDefault = m => m && m.default || m
 
 exports.components = {
   "component---node-modules-gatsby-source-prismic-graphql-components-preview-page-js": hot(preferDefault(require("/Users/zacharyrnewton/Desktop/studiogurr/node_modules/gatsby-source-prismic-graphql/components/PreviewPage.js"))),
+  "component---src-templates-archive-js": hot(preferDefault(require("/Users/zacharyrnewton/Desktop/studiogurr/src/templates/archive.js"))),
+  "component---cache-dev-404-page-js": hot(preferDefault(require("/Users/zacharyrnewton/Desktop/studiogurr/.cache/dev-404-page.js"))),
   "component---src-pages-404-js": hot(preferDefault(require("/Users/zacharyrnewton/Desktop/studiogurr/src/pages/404.js"))),
   "component---src-pages-about-js": hot(preferDefault(require("/Users/zacharyrnewton/Desktop/studiogurr/src/pages/about.js"))),
   "component---src-pages-archive-js": hot(preferDefault(require("/Users/zacharyrnewton/Desktop/studiogurr/src/pages/archive.js"))),

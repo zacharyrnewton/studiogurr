@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-archive-js","path":"/archive/","result":{"pageContext":{}}}
+{"componentChunkName":"component---src-pages-archive-js","path":"/archive/","result":{"data":{"prismic":{"allArchives":{"edges":[{"node":{"title":[{"type":"heading1","text":"Wayport Travel","spans":[]}]}},{"node":{"title":[{"type":"heading1","text":"Testing Archive","spans":[]}]}}]}}},"pageContext":{}}}
