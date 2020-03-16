@@ -1,9 +1,9 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import React from "react"
 import style from "../sass/modules/footer.module.sass"
 
-const Footer = ({ siteTitle }) => (
+const Footer = () => (
   <footer className={style.footer}>
     <Link to="/" className={style.logo}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 73.515">
@@ -70,12 +70,12 @@ const Footer = ({ siteTitle }) => (
   </footer>
 )
 
-Footer.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Footer.defaultProps = {
-  siteTitle: ``,
-}
+// Footer.propTypes = {
+//   siteTitle: PropTypes.string,
+// }
+//
+// Footer.defaultProps = {
+//   siteTitle: ``,
+// }
 
 export default Footer

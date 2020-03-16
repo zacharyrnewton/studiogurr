@@ -48,7 +48,7 @@ const AboutPage = (data) => (
         `
       }
       render={data => (
-        <div className={style.image}>{ data.allFile.edges.map((edge) => (<Img fluid={edge.node.childImageSharp.fluid} alt={edge.node.name} key={edge.node.name} />)) }</div>
+        <div className={style.image}>{ data.allFile.edges.map((edge) => (<Img fluid={edge.node.childImageSharp.fluid} alt={edge.node.name} key={edge.node.id} />)) }</div>
       )}
     />
     </div>

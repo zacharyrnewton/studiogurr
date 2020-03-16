@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import React from "react"
 import style from "../sass/modules/navigation.module.sass"
 
@@ -13,7 +13,7 @@ function mobileNavToggle() {
   }
 }
 
-const Navigation = ({ siteTitle }) => (
+const Navigation = () => (
   <nav className={style.navigation} id="navItems">
     <Link to="/" className={style.logo}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 73.515">
@@ -57,12 +57,12 @@ const Navigation = ({ siteTitle }) => (
   </nav>
 )
 
-Navigation.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Navigation.defaultProps = {
-  siteTitle: ``,
-}
+// Navigation.propTypes = {
+//   siteTitle: PropTypes.string,
+// }
+//
+// Navigation.defaultProps = {
+//   siteTitle: ``,
+// }
 
 export default Navigation

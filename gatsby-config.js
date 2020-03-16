@@ -10,8 +10,8 @@ module.exports = {
   siteMetadata: {
     siteUrl: process.env.SITE_URL,
     title: process.env.SITE_TITLE,
-    description: `Striving for clarity, reduction, and functionality, our design process will emphasize your brand’s messaging and values. Our desire is to create brand symbols, systems, and languages that are full of meaning, convey trust, and last for many years to come. We are a research-driven, disciplined, and passionate group of individuals that function much like a band. Each member plays their own unique instrument, and each is integral to the overall sound, but we all play in unison.`,
-    author: `@studiogurr`,
+    description: process.env.SITE_DESCRIPTION,
+    author: process.env.SITE_AUTHOR,
   },
   plugins: [
     `gatsby-plugin-sass`,
