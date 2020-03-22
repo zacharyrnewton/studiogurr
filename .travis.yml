@@ -4,10 +4,11 @@ before_script:
   - npm install
 node_js:
   - "10"
+
 deploy:
-  provider: script
-  # Note: change "docs" to the directory where your gatsby-site lives, if necessary
-  script: npm run deploy-staging-clean
+  provider: pages
   skip_cleanup: true
+  github_token: $repo  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
   on:
     branch: development
