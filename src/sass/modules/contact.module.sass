@@ -1,0 +1,56 @@
+@import "../config/vars"
+
+.contactWrapper
+  width: 100%
+  max-width: 1250px
+  margin: auto
+  display: grid
+  // grid-template-columns: repeat(auto-fill, minmax(609px, 1fr))
+  grid-template-columns: 1fr 1fr
+  grid-gap: 32px
+  align-items: center
+  justify-items: center
+  .content
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    color: var(--color-dm-typo-emp-1, $color-dm-typo-emp-1)
+    p, a
+      color: inherit
+    a.contact
+      margin-top: 32px
+      box-sizing: border-box
+      color: var(--color-dm-typo-emp-1, $color-dm-typo-emp-1)
+      border: 1px solid var(--color-dm-typo-emp-1, $color-dm-typo-emp-1)
+      padding: 20px 66px
+      user-select: none
+
+
+  .image
+    display: block
+    width: 100%
+    height: auto
+@media screen and (max-width: 800px)
+  .contactWrapper
+    grid-template-columns: 1fr
+    margin: auto auto 64px auto
+    .content
+      p
+        font-size: 1.5rem
+        line-height: 1.875rem
+      a.contact
+        width: 100%
+        text-align: center
+        font-size: 1.5rem
+        line-height: 1.875rem
+        padding: 20px 0
+        &:hover
+          font-style: normal
+          text-align: center
+          font-size: 1.5rem
+          line-height: 1.875rem
+          background: var(--color-base-alt, $color-base-alt)
+          color: var(--color-base, $color-base)
+    .image
+      display: none
