@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { RichText } from 'prismic-reactjs'
+import { RichText, Date } from 'prismic-reactjs'
 import style from "../sass/modules/archive.module.sass"
 
 const Archive = ({ data }) => {
@@ -14,18 +14,20 @@ const Archive = ({ data }) => {
         <div className={style.bodyContentWrapper}>
           <div className={style.bodyContent}>
             <div className={style.aside}>
-              <p>Archived {RichText.asText(data.prismic.archive.year)}</p>
+  <p>◊ <br />Archived {Date(data.prismic.archive.year).getFullYear()}</p>
               {RichText.render(data.prismic.archive.services)}
             </div>
             <div className={style.body}>
               {RichText.render(data.prismic.archive.title)}
               {RichText.render(data.prismic.archive.location)}
-              {RichText.render(data.prismic.archive.body)}
+              <div className={style.bodyCopy}>
+                {RichText.render(data.prismic.archive.body)}
+              </div>
             </div>
             <div className={style.footerContent}>
               <p>Collaborators</p>
               {RichText.render(data.prismic.archive.collaborators)}
-              <p>Production</p>
+              <p className={style.production}>Production</p>
               {RichText.render(data.prismic.archive.production)}
             </div>
           </div>

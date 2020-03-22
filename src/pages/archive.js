@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import style from "../sass/modules/archiveIndex.module.sass"
-import { RichText } from 'prismic-reactjs'
+import { RichText, Date } from 'prismic-reactjs'
 
 
 const Archives = ( { archives } ) => {
@@ -17,7 +17,7 @@ const Archives = ( { archives } ) => {
             <div>
               <h2>{RichText.asText(archive.node.title)}</h2>
               <p>{RichText.asText(archive.node.location)}</p>
-              <p>{RichText.asText(archive.node.year)}</p>
+              <p>{Date(archive.node.year).getFullYear()}</p>
               {RichText.render(archive.node.services)}
             </div>
           </Link>
@@ -41,7 +41,7 @@ export default ({ data }) => {
 export const pageQuery = graphql`
   query ArchiveIndex {
     prismic {
-      allArchives {
+      allArchives(sortBy: year_DESC) {
         edges {
           node {
             title
