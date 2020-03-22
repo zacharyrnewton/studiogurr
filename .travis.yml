@@ -10,5 +10,6 @@ deploy:
   skip_cleanup: true
   github_token: $repo  # Set in the settings page of your repository, as a secure variable
   keep_history: true
+  target_branch: gh-pages
   on:
     branch: development
