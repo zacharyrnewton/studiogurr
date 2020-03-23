@@ -15,7 +15,7 @@ const Archive = ({ data }) => {
         <div className={style.bodyContentWrapper}>
           <div className={style.bodyContent}>
             <div className={style.aside}>
-              <p>◊ <br />Archived {Date(data.prismic.archive.year).getFullYear()}</p>
+              <p>{data.prismic.archive.archive_number && <>◊ {data.prismic.archive.archive_number}<br /></> }Archived {Date(data.prismic.archive.year).getFullYear()}</p>
               {RichText.render(data.prismic.archive.services)}
             </div>
             <div className={style.body}>
@@ -27,12 +27,12 @@ const Archive = ({ data }) => {
             </div>
             <div className={style.footerContent}>
               {data.prismic.archive.collaborators &&
-                <div><p className={style.collaborators}>Collaborators</p>
-                {RichText.render(data.prismic.archive.collaborators)}</div>
+                <><p className={style.collaborators}>Collaborators</p>
+                {RichText.render(data.prismic.archive.collaborators)}</>
               }
               {data.prismic.archive.production &&
-                <div><p className={style.production}>Production</p>
-                {RichText.render(data.prismic.archive.production)}</div>
+                <><p className={style.production}>Production</p>
+                {RichText.render(data.prismic.archive.production)}</>
               }
             </div>
           </div>
@@ -59,6 +59,7 @@ export const pageQuery = graphql`
         production
         year
         title
+        archive_number
         side_image
         side_imageSharp {
           id

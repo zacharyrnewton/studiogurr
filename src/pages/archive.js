@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import style from "../sass/modules/archiveIndex.module.sass"
 import { RichText, Date } from 'prismic-reactjs'
-
+import Img from "gatsby-image"
 
 const Archives = ( { archives } ) => {
   if (!archives) return null
@@ -13,11 +13,11 @@ const Archives = ( { archives } ) => {
       {archives.map(archive => {
         return (
           <Link to={'/archive/' + archive.node._meta.uid} key={archive.node._meta.id} className={style.archive}>
-            <img src={archive.node.hero_image.url} alt={archive.node.hero_image.alt}/>
+            <Img className={style.thumbnail} fluid={archive.node.hero_imageSharp.childImageSharp.fluid} alt={archive.node.hero_image.alt}/>
             <div>
               <h2>{RichText.asText(archive.node.title)}</h2>
               <p>{RichText.asText(archive.node.location)}</p>
-              <p>{Date(archive.node.year).getFullYear()}</p>
+        <p>{archive.node.archive_number && <>◊ {archive.node.archive_number}</> }{archive.node.year && <> Archived {Date(archive.node.year).getFullYear()}</>}</p>
               {RichText.render(archive.node.services)}
             </div>
           </Link>
@@ -41,12 +41,13 @@ export default ({ data }) => {
 export const pageQuery = graphql`
   query ArchiveIndex {
     prismic {
-      allArchives(sortBy: year_DESC) {
+      allArchives(sortBy: archive_number_DESC) {
         edges {
           node {
             title
             location
             year
+            archive_number
             services
             hero_image
             hero_imageSharp {
@@ -55,17 +56,7 @@ export const pageQuery = graphql`
               childImageSharp {
                 id
                 fluid {
-                  base64
-                  tracedSVG
-                  srcWebp
-                  srcSetWebp
-                  originalImg
-                  originalName
-                  presentationWidth
-                  presentationHeight
-                  srcSet
-                  src
-                  sizes
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
