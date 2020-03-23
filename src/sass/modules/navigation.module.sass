@@ -6,8 +6,8 @@
   grid-template-columns: 150px 1fr
   padding: 64px 128px 0 128px
   width: 100%
-  background-color: var(--color-base-blur, $color-base-blur)
-  backdrop-filter: $filter-blur-glow
+  // background-color: var(--color-base-blur, $color-base-blur)
+  // backdrop-filter: $filter-blur-glow
   box-sizing: border-box
   z-index: 100
   ul
@@ -84,6 +84,8 @@
 @media screen and (max-width: 1000px)
   .navigation
     padding: 64px 64px 64px 64px
+    background-color: var(--color-base-blur, $color-base-blur)
+    backdrop-filter: $filter-blur-glow
     .logo
       width: 40px
       margin: 0

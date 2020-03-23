@@ -45,7 +45,7 @@
         grid-area: footer
         width: 100%
         max-width: 500px
-        p
+        p.collaborators, p.production
           font-weight: bold
         ul
           list-style: none
@@ -58,6 +58,10 @@
       .bodyContent
         grid-template-areas: "body body" "aside footer"
         grid-row-gap: 32px
+
+@media screen and (min-width: 1000px)
+  .archiveContentWrapper
+    margin: -32px auto 0 auto
 
 .gallery
   display: grid

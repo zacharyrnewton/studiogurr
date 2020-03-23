@@ -26,10 +26,14 @@ const Archive = ({ data }) => {
               </div>
             </div>
             <div className={style.footerContent}>
-              <p>Collaborators</p>
-              {RichText.render(data.prismic.archive.collaborators)}
-              <p className={style.production}>Production</p>
-              {RichText.render(data.prismic.archive.production)}
+              {data.prismic.archive.collaborators &&
+                <div><p className={style.collaborators}>Collaborators</p>
+                {RichText.render(data.prismic.archive.collaborators)}</div>
+              }
+              {data.prismic.archive.production &&
+                <div><p className={style.production}>Production</p>
+                {RichText.render(data.prismic.archive.production)}</div>
+              }
             </div>
           </div>
           <Img fluid={data.prismic.archive.side_imageSharp.childImageSharp.fluid} alt={data.prismic.archive.side_image.alt}/>
