@@ -2,18 +2,18 @@
 
 
 .archiveWrapper
-  margin: 64px auto 0 auto
-  // padding: 0 0 0 150px
+  margin: 64px auto 64px auto
+  // padding: 0 150px
   padding: 0
   display: grid
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr))
-  grid-column-gap: 0
+  // grid-template-columns: repeat(auto-fit, minmax(450px, 1fr))
+  grid-template-columns: 1fr 1fr
+  grid-column-gap: 16px
   grid-row-gap: 80px
   width: 100%
   max-width: 100%
   overflow: hidden
-
-
+  box-sizing: border-box
   .archive
     display: grid
     grid-template-columns: repeat(auto-fit, minmax(300px, auto))
@@ -37,6 +37,7 @@
     //   width: 1px
     //   height: 100%
     //   background: var(--color-base-alt, $color-dm-base-alt)
+    //   z-index: 1
     h2
       font-weight: bold
       line-height: inherit
@@ -66,4 +67,24 @@
 
 @media screen and (max-width: 1000px)
   .archiveWrapper
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr 1fr
+    margin: 16px auto 64px auto
+    .archive
+      display: grid
+      grid-template-columns: 1fr
+      justify-content: start
+      align-content: start
+      justify-items: start
+      align-items: start
+      grid-gap: 8px
+      width: 100%
+      position: relative
+      line-height: 1.25rem
+      padding-left: 0px
+      .thumbnail
+        position: relative
+        width: 100%
+        height: calc(50vw - 48px)
+        object-fit: cover
+        z-index: 0
+

@@ -1,0 +1,32 @@
+@import "../config/vars"
+
+
+.featuredArchive
+  width: 100%
+  margin: -32px auto calc(32px + 64px) auto
+  text-decoration: none
+  color: var(--color-base-alt, $color-base)
+  .image
+    width: 100%
+    // height: calc((100vw/16)*9)
+    // max-height: calc((100vw/16)*7)
+  .text
+    margin: 16px 0 0 16px
+    line-height: 1.25em
+    h2, p
+      line-height: inherit
+    h2
+      font-weight: bold
+    p
+      opacity: 0.6
+  &:hover
+    .text
+      p
+        opacity: 1
+
+@media screen and (max-width: 1000px)
+   .featuredArchive
+      margin: -0 auto 64px auto
+      .image
+
+

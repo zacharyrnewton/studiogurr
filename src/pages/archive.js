@@ -17,7 +17,7 @@ const Archives = ( { archives } ) => {
             <div>
               <h2>{RichText.asText(archive.node.title)}</h2>
               <p>{RichText.asText(archive.node.location)}</p>
-        <p>{archive.node.archive_number && <>◊ {archive.node.archive_number}</> }{archive.node.year && <> Archived {Date(archive.node.year).getFullYear()}</>}</p>
+              <p>{archive.node.archive_number && <>◊ {archive.node.archive_number}</> }{archive.node.year && <> Archived {Date(archive.node.year).getFullYear()}</>}</p>
               {RichText.render(archive.node.services)}
             </div>
           </Link>
