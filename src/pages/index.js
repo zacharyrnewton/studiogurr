@@ -6,18 +6,10 @@ import { RichText, Date } from "prismic-reactjs"
 import Img from "gatsby-image"
 import React, { Component } from "react"
 import Slider from "react-slick"
-
+import SplashScreen from "../components/splash-screen"
 
 export default ({ data }) => {
   const archives = data.prismic.allArchives.edges
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   autoplay: true,
-  // };
   const FeaturedArchive = ( { archives } ) => {
     if (!archives) return null
     return (
@@ -37,13 +29,24 @@ export default ({ data }) => {
     )
   }
   class SimpleSlider extends Component {
+    constructor(props) {
+      super(props);
+      this.next = this.next.bind(this);
+      this.previous = this.previous.bind(this);
+    }
+    next() {
+      this.slider.slickNext();
+    }
+    previous() {
+      this.slider.slickPrev();
+    }
     render() {
       const settings = {
         dots: false,
         arrows: false,
         infinite: true,
         speed: 1000,
-        easing: `ease-in-out`,
+        easing: `linear`,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
@@ -54,18 +57,26 @@ export default ({ data }) => {
         rows: 1,
       };
       return (
-        <Slider {...settings} className={style.slider}>
+        <Slider ref={c => (this.slider = c)} {...settings} className={style.slider}>
           {archives.map(archive => {
             return (
-              <Link to={'/archive/' + archive.node._meta.uid} key={archive.node._meta.id} className={style.featuredArchive}>
+              <div to={'/archive/' + archive.node._meta.uid} key={archive.node._meta.id} className={style.featuredArchive}>
+                <div className={style.sliderControls}>
+                  <button className={style.buttonPrevious} onClick={this.previous}>
+                    Previous
+                  </button>
+                  <button className={style.buttonNext} onClick={this.next}>
+                    Next
+                  </button>
+                </div>
                 <Img className={style.image} fluid={archive.node.hero_imageSharp.childImageSharp.fluid} alt={archive.node.hero_image.alt}/>
-                <div to={'/archive/' + archive.node._meta.uid} key={archive.node._meta.id} className={style.featuredArchive}>
+                <Link to={'/archive/' + archive.node._meta.uid} key={archive.node._meta.id} className={style.featuredArchive}>
                   <div className={style.text}>
                     <h2>{RichText.asText(archive.node.title)}</h2>
                     <p>{archive.node.archive_number && <>◊ Project {archive.node.archive_number}</> }{archive.node.year && <> <br/>Archived {Date(archive.node.year).getFullYear()}</>}</p>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             )
           })}
         </Slider>
@@ -80,6 +91,7 @@ export default ({ data }) => {
       return(
         <Layout>
           <SEO title="Home" />
+          <SplashScreen />
           <FeaturedArchive archives={archives} /> 
         </Layout>
       )
@@ -87,6 +99,7 @@ export default ({ data }) => {
       return (
         <Layout>
           <SEO title="Home" />
+          <SplashScreen />
           <SimpleSlider/>
         </Layout>
       )
