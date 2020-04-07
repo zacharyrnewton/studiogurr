@@ -35,11 +35,11 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  const archive = path.resolve("src/templates/archive.js")
+  const archive = path.resolve("src/templates/work.js")
 
   pages.data.prismic.allArchives.edges.forEach(edge => {
     createPage({
-      path: `/archive/${edge.node._meta.uid}`,
+      path: `/work/${edge.node._meta.uid}`,
       component: archive,
       context: {
         uid: edge.node._meta.uid,

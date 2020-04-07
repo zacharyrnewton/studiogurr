@@ -2,12 +2,9 @@
 
 .navigation
   display: grid
-  // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
   grid-template-columns: 150px 1fr
   padding: 64px 128px 0 128px
   width: 100%
-  // background-color: var(--color-base-blur, $color-base-blur)
-  // backdrop-filter: $filter-blur-glow
   box-sizing: border-box
   z-index: 100
   ul
@@ -15,18 +12,18 @@
     padding: 0
     margin: 0
     display: grid
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
-    // grid-template-columns: 250px 1fr
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
     justify-items: start
     align-items: stretch
     row-gap: 32px
+    width: auto
     a
       display: block
       position: relative
       list-style: none
       padding: 0 0 0 24px
       margin: 0 64px 0 0
-      max-width: 325px
+      max-width: 125px
       height: 80px
       color: var(--color-base-alt, $color-base-alt)
       box-sizing: border-box
@@ -64,7 +61,6 @@
     &:active
       background-color: transparentize($color-absolute-black, 0.9)
   .logo
-    // width: 200px
     width: 78px
     margin: 0
     padding: 0

@@ -16,12 +16,8 @@ export default ({ data }) => {
       <>
         {archives.map(archive => {
           return (
-            <Link to={'/archive/' + archive.node._meta.uid} key={archive.node._meta.id} className={style.featuredArchive}>
-              <Img className={style.image} fluid={archive.node.hero_imageSharp.childImageSharp.fluid} alt={archive.node.hero_image.alt}/>
-              <div className={style.text}>
-                <h2>{RichText.asText(archive.node.title)}</h2>
-                <p>{archive.node.archive_number && <>◊ Project {archive.node.archive_number}</> }{archive.node.year && <> <br/>Archived {Date(archive.node.year).getFullYear()}</>}</p>
-              </div>
+            <Link to={'/work/' + archive.node._meta.uid} key={archive.node._meta.id} className={style.featuredArchive}>
+              <Img className={style.imageMobile} fluid={archive.node.hero_imageSharp.childImageSharp.fluid} alt={archive.node.hero_image.alt}/>
             </Link>
           )
         })}
@@ -60,7 +56,7 @@ export default ({ data }) => {
         <Slider ref={c => (this.slider = c)} {...settings} className={style.slider}>
           {archives.map(archive => {
             return (
-              <div to={'/archive/' + archive.node._meta.uid} key={archive.node._meta.id} className={style.featuredArchive}>
+              <div to={'/work/' + archive.node._meta.uid} key={archive.node._meta.id} className={style.featuredArchive}>
                 <div className={style.sliderControls}>
                   <button className={style.buttonPrevious} onClick={this.previous}>
                     Previous
@@ -70,10 +66,10 @@ export default ({ data }) => {
                   </button>
                 </div>
                 <Img className={style.image} fluid={archive.node.hero_imageSharp.childImageSharp.fluid} alt={archive.node.hero_image.alt}/>
-                <Link to={'/archive/' + archive.node._meta.uid} key={archive.node._meta.id} className={style.featuredArchive}>
+                <Link to={'/work/' + archive.node._meta.uid} key={archive.node._meta.id} className={style.featuredArchive}>
                   <div className={style.text}>
                     <h2>{RichText.asText(archive.node.title)}</h2>
-                    <p>{archive.node.archive_number && <>◊ Project {archive.node.archive_number}</> }{archive.node.year && <> <br/>Archived {Date(archive.node.year).getFullYear()}</>}</p>
+                    <p>{Date(archive.node.year).getFullYear()}</p>
                   </div>
                 </Link>
               </div>
@@ -113,7 +109,7 @@ export default ({ data }) => {
 export const pageQuery = graphql`
   query SliderData {
     prismic {
-      allArchives(sortBy: archive_number_DESC) {
+      allArchives(sortBy: year_DESC) {
         edges {
           node {
             title

@@ -16,7 +16,8 @@
       height: auto
   ul.footerListWrapper
     display: grid
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
+    // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
     grid-template-rows: repeat(auto)
     justify-items: start
     justify-content: stretch
@@ -87,6 +88,8 @@
         line-height: 1.25rem
         height: 74px
         min-height: 74px
+        &:nth-of-type(3),&:nth-of-type(4)
+          display: none
         ul.footerList
           padding: 0 0 0 8px
           font-size: inherit

@@ -3,21 +3,34 @@
 .slider
   position: absolute
   left: 0
+  top: 0
   right: 0
   margin: -32px auto calc(32px + 64px) auto
   padding: 0px
-  width: 100%
+  width: calc(1500px - (128px *2))
   max-width: calc(100vw - (128px *2))
   box-sizing: border-box
+  overflow: hidden
+  .slick-track, .slick-list
+    overflow: hidden
   .featuredArchive
     margin: 0
+    width: 100%
+    margin: 0 auto 64px auto
+    text-decoration: none
+    color: var(--color-base-alt, $color-base)
+    overflow: hidden
+    .image
+      width: 100%
+      // height: calc((100vw/16)*9)
+      height: 70vh
     .sliderControls
       position: absolute
       top: 0
       z-index: 1000
       height: 70vh
-      width: 100%
       max-width: calc(100vw - (128px *2))
+      width: calc(1500px - (128px *2))
       display: grid
       grid-template-columns: 1fr 1fr
       button
@@ -43,22 +56,29 @@
         &:hover
           opacity: 1
     .text
-      margin: 16px 0 0 16px
-      line-height: 1.25em
-    .image
-      height: 70vh
+      margin: 16px 0 0 0
+      line-height: 1.125em
+      h2, p
+        line-height: inherit
+      h2
+        font-weight: bold
+      p
+        opacity: 0.6
+    &:hover
+      .text
+        p
+          opacity: 1
 
 .featuredArchive
   width: 100%
-  // margin: -32px auto calc(32px + 64px) auto
-  margin: 0 auto 64px auto
+  margin: 0 auto 32px auto
   text-decoration: none
   color: var(--color-base-alt, $color-base)
   overflow: hidden
-  .image
+  .imageMobile
     width: 100%
-    height: calc((100vw/16)*9)
-    // max-height: calc((100vw/16)*7)
+    height: 0
+    padding-top: 100%
   .text
     margin: 16px 0 0 0
     line-height: 1.25em
@@ -81,22 +101,28 @@
   .slider
     margin: -0 auto 64px auto
     max-width: calc(100vw - (64px *2))
+    width: calc(1500px - (64px *2))
     .featuredArchive
       .sliderControls
         max-width: calc(100vw - (64px *2))
+        width: calc(1500px - (64px *2))
 
 @media screen and (max-width: 750px)
   .slider
     margin: -0 auto 64px auto
     max-width: calc(100vw - (32px *2))
+    width: calc(1500px - (32px *2))
     .featuredArchive
       .sliderControls
         max-width: calc(100vw - (32px *2))
+        width: calc(1500px - (32px *2))
 
 @media screen and (max-width: 500px)
   .slider
     margin: -0 auto 64px auto
     max-width: calc(100vw - (16px *2))
+    width: calc(1500px - (16px *2))
     .featuredArchive
       .sliderControls
         max-width: calc(100vw - (16px *2))
+        width: calc(1500px - (16px *2))

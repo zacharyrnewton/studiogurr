@@ -24,6 +24,7 @@
       justify-items: start
       align-items: start
       .aside
+        display: none
         grid-area: aside
         width: 150px
         p
@@ -35,7 +36,6 @@
         ul li, p
           opacity: .25
           transition: opacity 0.25s ease-in-out
-          line-height: 1.25rem
           &:hover
             opacity: 1
       .body
@@ -48,7 +48,6 @@
         .bodyCopy
           margin: 24px 0 0 0
           p
-            line-height: 1.25rem
             margin-bottom: 1rem
       .footerContent
         grid-area: footer
@@ -62,12 +61,13 @@
           padding: 0
           li
             line-height: 1.25rem
-        // .production
-          // margin: 24px 0 0 0
+        .production
+          margin: 24px 0 0 0
     @media screen and (max-width: 600px)
       margin: 32px 0
       .bodyContent
-        grid-template-areas: "body body" "aside footer"
+        // grid-template-areas: "body body" "aside footer"
+        grid-template-areas: "body body" "footer footer"
         grid-row-gap: 32px
 
 @media screen and (min-width: 1000px)
@@ -97,6 +97,11 @@
     grid-column: 1 / 2
   .galleryImage:nth-child(6n+5)
     grid-column: 2 / 4
+@media screen and (max-width: 1000px)
+  .gallery
+    grid-template-columns: 1fr 
+    .galleryImage:nth-child(6n+1), .galleryImage:nth-child(6n+2), .galleryImage:nth-child(3n), .galleryImage:nth-child(6n+4), .galleryImage:nth-child(6n+5)
+      grid-column: 1 / 1
 
 
 @media screen and (max-width: 1000px)
