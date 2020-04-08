@@ -52,6 +52,10 @@ const Footer = () => (
         </ul>
       </li>
       <li className={style.footerListContainer}>
+      </li>
+      <li className={style.footerListContainer}>
+      </li>
+      {/*<li className={style.footerListContainer}>
         <ul className={style.footerList}>
           <li><Link to="/work" className={style.navigationListTitle}><span className={style.line}></span><b>Work</b></Link></li>
         </ul>
@@ -61,7 +65,7 @@ const Footer = () => (
           <li><Link to="/about" className={style.navigationListTitle}><span className={style.line}></span><b>About</b></Link></li>
         </ul>
       </li>
-      {/*<li className={style.footerListContainer}>
+      <li className={style.footerListContainer}>
         <ul className={style.footerList}>
           <li><Link to="/contact" className={style.navigationListTitle}><span className={style.line}></span><b>Contact</b></Link></li>
         </ul>

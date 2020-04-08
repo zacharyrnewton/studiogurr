@@ -11,7 +11,7 @@ const Archive = ({ data }) => {
     <Layout>
       <SEO title={RichText.asText(data.prismic.archive.title)} />
       <div className={style.archiveContentWrapper}>
-        <Img fluid={data.prismic.archive.hero_imageSharp.childImageSharp.fluid} alt={data.prismic.archive.hero_image.alt}/>
+        <Img className={style.heroImage} fluid={data.prismic.archive.hero_imageSharp.childImageSharp.fluid} alt={data.prismic.archive.hero_image.alt}/>
         <div className={style.bodyContentWrapper}>
           <div className={style.bodyContent}>
             <div className={style.aside}>
@@ -37,7 +37,7 @@ const Archive = ({ data }) => {
               }
             </div>
           </div>
-          <Img fluid={data.prismic.archive.side_imageSharp.childImageSharp.fluid} alt={data.prismic.archive.side_image.alt}/>
+          <Img className={style.sideImage} fluid={data.prismic.archive.side_imageSharp.childImageSharp.fluid} alt={data.prismic.archive.side_image.alt}/>
         </div>
       </div>
       <div className={style.gallery}>

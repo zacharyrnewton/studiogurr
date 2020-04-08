@@ -6,10 +6,13 @@ import style from "../sass/modules/navigation.module.sass"
 
 function mobileNavToggle() {
   const navItems = document.getElementById('navItems');
+  const body = document.body;
   if (navItems.className === style.navigation) {
     navItems.className = style.navigation + ' ' + style.active;
+    body.className = 'active';
   } else {
     navItems.className = style.navigation;
+    body.className = ' ';
   }
 }
 

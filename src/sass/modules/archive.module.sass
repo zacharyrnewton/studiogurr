@@ -4,7 +4,7 @@
 .archiveContentWrapper
   width: 100%
   margin: 0 auto 0 auto
-  img
+  .heroImage
     width: 100%
   .bodyContentWrapper
     display: grid
@@ -121,3 +121,18 @@
   .archiveContentWrapper
     .bodyContentWrapper
       grid-template-columns: repeat(auto-fill, minmax(100%, 1fr))
+
+
+@media screen and (max-width: 800px)
+  .archiveContentWrapper
+    .heroImage
+      height: 0px
+      padding-top: 100%
+    .bodyContentWrapper
+      .sideImage
+        height: 0px
+        padding-top: 100%
+  .gallery
+    .galleryImage
+      height: 0px
+      padding-top: 100%
