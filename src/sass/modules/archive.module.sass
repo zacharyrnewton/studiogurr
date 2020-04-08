@@ -23,17 +23,22 @@
       align-content: start
       justify-items: start
       align-items: start
+      color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
       .aside
         display: none
         grid-area: aside
         width: 150px
+        color: inherit
         p
           margin: 0 0 24px 0
+          color: inherit
         ul
           list-style: none
           margin: 0
           padding: 0
+          color: inherit
         ul li, p
+          color: inherit
           opacity: .25
           transition: opacity 0.25s ease-in-out
           &:hover
@@ -42,23 +47,32 @@
         grid-area: body
         width: 100%
         max-width: 500px
+        color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
         h1
           font-weight: bold
+          color: inherit
+        p
+          color: inherit
         .bodyCopy
           margin: 24px 0 0 0
+          color: inherit
           p
             margin-bottom: 1rem
+            color: inherit
       .footerContent
         grid-area: footer
         width: 100%
         max-width: 500px
+        color: inherit
         p.collaborators, p.production
           font-weight: bold
+          color: inherit
         ul
           list-style: none
           margin: 0
           padding: 0
           li
+            color: inherit
         .production
           margin: 24px 0 0 0
     @media screen and (max-width: 600px)
@@ -100,6 +114,7 @@
     grid-template-columns: 1fr 
     .galleryImage:nth-child(6n+1), .galleryImage:nth-child(6n+2), .galleryImage:nth-child(3n), .galleryImage:nth-child(6n+4), .galleryImage:nth-child(6n+5)
       grid-column: 1 / 1
+      margin: 0
 
 
 @media screen and (max-width: 1000px)

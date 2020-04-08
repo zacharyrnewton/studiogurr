@@ -25,7 +25,7 @@
       margin: 0 64px 0 0
       max-width: 125px
       height: 80px
-      color: var(--color-base-alt, $color-base-alt)
+      color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
       box-sizing: border-box
       cursor: pointer
       span.line
@@ -55,7 +55,7 @@
     outline: none
     svg
       path.path
-        fill: var(--color-base-alt-1, $color-base-alt-1)
+        fill: var(--color-base-alt, $color-base-alt)
     &:hover
       background-color: transparentize($color-absolute-black, 0.95)
     &:active
@@ -68,6 +68,9 @@
     svg
       width: 78px
       height: auto
+      g
+        path
+          fill: var(--color-base-alt, $color-base-alt)
 @media screen and (max-width: 1920px)
   .navigation
     a
