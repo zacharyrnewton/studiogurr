@@ -2,7 +2,6 @@
 
 .footer
   display: grid
-  // grid-template-columns: repeat(auto-fit, minmax(325px, 1fr))
   grid-template-columns: 150px 1fr
   justify-items: start
   align-items: stretch
@@ -12,12 +11,10 @@
     width: 200px
     svg
       width: 52px
-      // height: 73.515px
       height: auto
   ul.footerListWrapper
     display: grid
-    // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr))
     grid-template-rows: repeat(auto)
     justify-items: start
     justify-content: stretch
@@ -47,7 +44,6 @@
         padding: 0
         margin: 0
         width: 100%
-        line-height: 1.25rem
         color: inherit
         a
           color: inherit
@@ -64,8 +60,6 @@
 
 @media screen and (max-width: 1920px)
   .footer
-    // grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
-    // grid-template-columns: 250px 1fr 1fr 1fr
     ul.footerListWrapper
       ul.footerList
         padding: 0 0 0 24px
@@ -73,7 +67,6 @@
 @media screen and (max-width: 1350px)
   .footer
     ul.footerListWrapper
-      // grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
       grid-template-columns: 1fr 1fr
 
 @media screen and (max-width: 1000px)
@@ -81,11 +74,10 @@
     margin: 64px 64px 64px 64px
     grid-template-columns: 1fr
     ul.footerListWrapper
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
       font-size: 0.875rem
       li.footerListContainer
         font-size: inherit
-        line-height: 1.25rem
         height: 74px
         min-height: 74px
         &:nth-of-type(3),&:nth-of-type(4)

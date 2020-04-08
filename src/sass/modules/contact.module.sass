@@ -5,7 +5,6 @@
   max-width: 1250px
   margin: auto
   display: grid
-  // grid-template-columns: repeat(auto-fill, minmax(609px, 1fr))
   grid-template-columns: 1fr 1fr
   grid-template-areas: "content image" "fullWidthImage fullWidthImage"
   grid-gap: 32px
@@ -47,15 +46,9 @@
     margin: auto auto 64px auto
     grid-template-areas: "image" "content" "fullWidthImage"
     .content
-      // p
-        font-size: 1.5rem
-        line-height: 1.875rem
       a.contact
         width: 100%
         text-align: center
-        // font-size: 1.5rem
-        // line-height: 1.875rem
-        // padding: 20px 0
         &:hover
           font-style: normal
           text-align: center
@@ -63,5 +56,3 @@
           line-height: 1.875rem
           background: var(--color-base-alt, $color-base-alt)
           color: var(--color-base, $color-base)
-    .image
-      // display: none
