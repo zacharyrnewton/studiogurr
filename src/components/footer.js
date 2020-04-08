@@ -5,7 +5,7 @@ import style from "../sass/modules/footer.module.sass"
 
 const Footer = () => (
   <footer className={style.footer}>
-    <Link to="/" className={style.logo}>
+    <Link to="/" aria-label="Home" className={style.logo}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 73.515">
         <g transform="translate(0)">
           <path d="M-47.854-54.833a7.342,7.342,0,0,1-7.352,7.351h-8.871a7.3,7.3,0,0,1-7.3-7.351v-19.6a7.3,7.3,0,0,1,7.3-7.351h8.871a7.342,7.342,0,0,1,7.352,7.351h-4.9a2.5,2.5,0,0,0-2.451-2.5h-8.871a2.459,2.459,0,0,0-2.4,2.5v19.6a2.416,2.416,0,0,0,2.4,2.45h8.871a2.457,2.457,0,0,0,2.451-2.45v-7.352h-6.861v-4.9h11.763Z" transform="translate(71.379 81.789)" fill="#fff"/>

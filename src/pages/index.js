@@ -16,7 +16,7 @@ export default ({ data }) => {
       <>
         {archives.map(archive => {
           return (
-            <Link to={'/work/' + archive.node._meta.uid} key={archive.node._meta.id} className={style.featuredArchive}>
+            <Link to={'/work/' + archive.node._meta.uid} key={archive.node._meta.id} aria-label={archive.node.title} className={style.featuredArchive}>
               <Img className={style.imageMobile} fluid={archive.node.hero_imageSharp.childImageSharp.fluid} alt={archive.node.hero_image.alt}/>
             </Link>
           )
