@@ -24,6 +24,10 @@
       border: 1px solid var(--color-base-alt, $color-base-alt)
       padding: 20px 66px
       user-select: none
+      &:hover
+          font-style: normal
+          background: var(--color-base-alt, $color-base-alt)
+          color: var(--color-base, $color-base)
   .image
     grid-area: image
     display: block
@@ -47,8 +51,4 @@
       a.contact
         width: 100%
         text-align: center
-        &:hover
-          font-style: normal
-          text-align: center
-          background: var(--color-base-alt, $color-base-alt)
-          color: var(--color-base, $color-base)
+        
