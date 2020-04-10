@@ -64,6 +64,7 @@ export default ({ data }) => {
                   <button className={style.buttonNext} onClick={this.next}>
                     Next
                   </button>
+                  <Link aria-label={"View " + RichText.asText(archive.node.title)} to={'/work/' + archive.node._meta.uid} key={archive.node._meta.id} className={style.goToWork}></Link>
                 </div>
                 <Img className={style.image} fluid={archive.node.hero_imageSharp.childImageSharp.fluid} alt={archive.node.hero_image.alt}/>
                 <Link to={'/work/' + archive.node._meta.uid} key={archive.node._meta.id} className={style.featuredArchive}>
