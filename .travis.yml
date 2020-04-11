@@ -1,86 +1,41 @@
-if: branch = master
-  language: node_js
-  node_js:
-    - "10.14.2"
-  cache: npm
+jobs:
+  include:
+    if: branch = development
+    language: node_js
+    node_js:
+      - "10.14.2"
+    cache: npm
 
-  before_install:
-  install: 
-    - npm ci
-  before_script:
-    - npm install -g gatsby-cli
-  script:
-    - GATSBY_ACTIVE_ENV=staging gatsby build
-  after_success:
-  after_failure:
-  after_script:
-  before_deploy:
+    before_install:
+    install: 
+      - npm ci
+    before_script:
+      - npm install -g gatsby-cli
 
-  deploy:
-    provider: pages
-    skip_cleanup: true
-    github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-    keep_history: true
-    target_branch: gh-pages
-    local_dir: public
-    on:
-      branch: development
-  after_deploy:
+    script:
+      - GATSBY_ACTIVE_ENV=staging gatsby build
 
-if: branch = staging
-  language: node_js
-  node_js:
-    - "10.14.2"
-  cache: npm
 
-  before_install:
-  install: 
-    - npm ci
-  before_script:
-    - npm install -g gatsby-cli
-  script:
-    - GATSBY_ACTIVE_ENV=staging gatsby build
-  after_success:
-  after_failure:
-  after_script:
-  before_deploy:
+    after_success:
+    after_failure:
 
-  deploy:
-    provider: pages
-    skip_cleanup: true
-    github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-    keep_history: true
-    target_branch: gh-pages
-    local_dir: public
-    on:
-      branch: development
-  after_deploy:
+    after_script:
 
-if: branch = development
-  language: node_js
-  node_js:
-    - "10.14.2"
-  cache: npm
+    before_deploy:
 
-  before_install:
-  install: 
-    - npm ci
-  before_script:
-    - npm install -g gatsby-cli
-  script:
-    - GATSBY_ACTIVE_ENV=staging gatsby build
-  after_success:
-  after_failure:
-  after_script:
-  before_deploy:
+    deploy:
+      provider: pages
+      skip_cleanup: true
+      github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+      keep_history: true
+      target_branch: gh-pages
+      local_dir: public
+      on:
+        branch: development
+      # provider: firebase
+      # token:
+      #   secure: $FIREBASE_TOKEN
+      # project: "studio-gurr"
+      # message: "Deployed with Travis"
 
-  deploy:
-    provider: pages
-    skip_cleanup: true
-    github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-    keep_history: true
-    target_branch: gh-pages
-    local_dir: public
-    on:
-      branch: development
-  after_deploy:
+    after_deploy:
