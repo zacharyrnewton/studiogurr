@@ -63,6 +63,9 @@ node_modules/
 
 # dotenv environment variables file
 .env
+.env.development
+.env.staging
+.env.production
 .DS_Store
 
 # Gatsby cache
