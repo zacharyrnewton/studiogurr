@@ -36,10 +36,5 @@ deploy:
   # local_dir: public
   # on:
   #   branch: staging
-  # provider: firebase
-  # token:
-  #   secure: $FIREBASE_TOKEN
-  # project: "studio-gurr"
-  # message: "Deployed with Travis"
 
 after_deploy:
