@@ -6,7 +6,7 @@ var plugins = [{
       options: {"plugins":[],"name":"Studio Gurr","short_name":"StudioGurr","start_url":"/","background_color":"#000000","theme_color":"#000000","display":"minimal-ui","icon":"src/images/favicon.png"},
     },{
       plugin: require('/Users/zacharyrnewton/Desktop/studiogurr/node_modules/gatsby-source-prismic-graphql/gatsby-ssr'),
-      options: {"plugins":[],"repositoryName":"studiogurr","accessToken":"MC5YbUdZMEJNQUFDQUFNUkpx.77-977-9Xe-_vV3vv73vv73vv73vv71t77-9Iu-_vWPvv73vv73vv71IPu-_vSbvv73vv71W77-977-9Bifvv73vv71A77-9","path":"/preview","previews":true},
+      options: {"plugins":[],"repositoryName":"studiogurr","accessToken":"MC5YcElrS2hBQUFDSUFPYkhm.77-9Xe-_ve-_ve-_vQjvv73vv73vv70t77-9Ugsl77-977-977-9be-_vQrvv73vv71n77-9L--_vTt0Inbvv70T","path":"/preview","previews":true},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
