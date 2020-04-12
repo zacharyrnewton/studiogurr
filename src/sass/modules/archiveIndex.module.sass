@@ -1,0 +1,50 @@
+@import "../config/vars"
+
+.archiveWrapper
+  margin: 64px auto 64px auto
+  padding: 0px
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+  grid-column-gap: 16px
+  grid-row-gap: 80px
+  width: 100%
+  max-width: 100%
+  overflow: hidden
+  box-sizing: border-box
+  .archive
+    display: grid
+    grid-template-columns: 1fr
+    justify-content: start
+    align-content: start
+    justify-items: start
+    align-items: start
+    grid-gap: 25px
+    width: 100%
+    position: relative
+    h2
+      font-weight: bold
+      color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
+    p
+      color: var(--color-typo-emp-2, $color-dm-typo-emp-2)
+    ul
+      list-style: none
+      padding: 0
+      margin: 20px 0 0 0
+      li
+        color: var(--color-typo-emp-2, $color-dm-typo-emp-2)
+    .thumbnail
+      position: relative
+      width: 100%
+      height: 0px
+      padding-top: 100%
+      object-fit: cover
+      z-index: 0
+    &:hover
+      color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
+      p, li
+        color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
+
+
+@media screen and (max-width: 600px)
+  .archiveWrapper
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))

@@ -1,59 +1,63 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
-
+import { RichText } from 'prismic-reactjs'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import style from "../sass/modules/about.module.sass"
 
-const IndexPage = (data) => (
+const AboutPage = ( { data } ) => (
   <Layout>
     <SEO title="About" />
     <div className={style.aboutWrapper}>
       <div className={style.content}>
-        <p>Striving for clarity, reduction, and functionality, our design process will emphasize your brand’s messaging and values. Our desire is to create brand symbols, systems, and languages that are full of meaning, convey trust, and last for many years to come. We are a research-driven, disciplined, and passionate group of individuals that function much like a band. Each member plays their own unique instrument, and each is integral to the overall sound, but we all play in unison.</p>
+        <p>{RichText.render(data.prismic.allAbouts.edges[0].node.about_body)}</p>
         <a className={style.contact} href="mailto:david@studiogurr.com" target="_blank" rel="noopener noreferrer">Let’s work together, ay?</a>
       </div>
-      <StaticQuery
-      query={
-        graphql`
-          query About {
-            allFile(filter: {relativePath: {eq: "david-gurr.jpg"}}) {
-              edges {
-                node {
-                  id
-                  name
-                  relativePath
-                  birthTime
-                  childImageSharp {
-                    fluid {
-                      base64
-                      aspectRatio
-                      src
-                      srcSet
-                      srcWebp
-                      srcSetWebp
-                      sizes
-                      originalImg
-                      originalName
-                      presentationWidth
-                      presentationHeight
-                    }
-                  }
-                }
-              }
-            }
-          }
-        `
-      }
-      render={data => (
-        <div className={style.image}>{ data.allFile.edges.map((edge) => (<Img fluid={edge.node.childImageSharp.fluid} alt={edge.node.name} key={edge.node.name} />)) }</div>
-      )}
-    />
+      <div className={style.image}><Img className={style.sideImage} fluid={data.prismic.allAbouts.edges[0].node.side_imageSharp.childImageSharp.fluid} alt={data.prismic.allAbouts.edges[0].node.side_image.alt} /></div>
+      <Img className={style.fullWidthImage} fluid={data.prismic.allAbouts.edges[0].node.full_width_imageSharp.childImageSharp.fluid} alt={data.prismic.allAbouts.edges[0].node.full_width_image.alt} />
+      
     </div>
+
   </Layout>
 )
 
 
-export default IndexPage
+export const query = graphql`
+  {
+    prismic {
+      allAbouts {
+        edges {
+          node {
+            page_title
+            full_width_image
+            full_width_imageSharp {
+              childImageSharp {
+                id
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            side_image
+            side_imageSharp {
+              childImageSharp {
+                id
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            about_body
+            _linkType
+          }
+        }
+      }
+    }
+  }
+`
+
+export default AboutPage
+
+

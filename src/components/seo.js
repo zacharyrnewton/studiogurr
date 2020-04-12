@@ -11,7 +11,7 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import ogImage from "../images/og.png"
 
-function SEO({ description, lang, meta, link, title, siteUrl }) {
+function SEO ( { description, lang, meta, link, title, siteUrl, author } ) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -35,7 +35,7 @@ function SEO({ description, lang, meta, link, title, siteUrl }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      // titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -63,7 +63,7 @@ function SEO({ description, lang, meta, link, title, siteUrl }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          // content: site.siteMetadata.author,
         },
         {
           name: `twitter:title`,
@@ -75,7 +75,17 @@ function SEO({ description, lang, meta, link, title, siteUrl }) {
         },
       ].concat(meta)}
       link={[
-
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          charset: "UTF-8",
+          href: "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css",
+        },
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css",
+        },
       ].concat(link)}
     />
   )
@@ -85,12 +95,13 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   link: [],
-  description: ``,
+  description: `This is the description for the website`,
 }
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
+  author: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   link: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
