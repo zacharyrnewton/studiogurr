@@ -31,7 +31,7 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Archive" />
+      <SEO title="Work" />
       <Archives archives={archives} />
     </Layout>
   )
