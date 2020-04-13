@@ -11,13 +11,12 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import ogImage from "../images/og.png"
 
-function SEO ( { description, lang, meta, link, title, siteUrl, author } ) {
+const SEO = ( { description, lang, meta, link, title } ) => {
   const { site } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
-            siteUrl
             title
             description
             author
@@ -26,8 +25,9 @@ function SEO ( { description, lang, meta, link, title, siteUrl, author } ) {
       }
     `
   )
+  
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || `Striving for clarity, reduction, and functionality, our design process will emphasize your brand’s messaging and values. Our desire is to create brand symbols, systems, and languages that are full of meaning, convey trust, and last for many years to come. We are a research-driven, disciplined, and passionate group of individuals that function much like a band. Each member plays their own unique instrument, and each is integral to the overall sound, but we all play in unison.`
 
   return (
     <Helmet
@@ -36,6 +36,7 @@ function SEO ( { description, lang, meta, link, title, siteUrl, author } ) {
       }}
       title={title}
       // titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | Studio Gurr`}
       meta={[
         {
           name: `description`,
@@ -64,6 +65,7 @@ function SEO ( { description, lang, meta, link, title, siteUrl, author } ) {
         {
           name: `twitter:creator`,
           // content: site.siteMetadata.author,
+          content: `@studiogurr`,
         },
         {
           name: `twitter:title`,
@@ -92,7 +94,7 @@ function SEO ( { description, lang, meta, link, title, siteUrl, author } ) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `en-US`,
   meta: [],
   link: [],
   description: `This is the description for the website`,
