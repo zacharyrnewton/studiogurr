@@ -16,9 +16,14 @@ function mobileNavToggle() {
   }
 }
 
+function closeNav() {
+  const body = document.body;
+  body.className = ' ';
+}
+
 const Navigation = () => (
   <nav className={style.navigation} id="navItems">
-    <Link to="/" aria-label="Home" className={style.logo}>
+    <Link to="/" aria-label="Home" className={style.logo} onClick={closeNav}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 73.515">
         <g transform="translate(0)">
           <path d="M-47.854-54.833a7.342,7.342,0,0,1-7.352,7.351h-8.871a7.3,7.3,0,0,1-7.3-7.351v-19.6a7.3,7.3,0,0,1,7.3-7.351h8.871a7.342,7.342,0,0,1,7.352,7.351h-4.9a2.5,2.5,0,0,0-2.451-2.5h-8.871a2.459,2.459,0,0,0-2.4,2.5v19.6a2.416,2.416,0,0,0,2.4,2.45h8.871a2.457,2.457,0,0,0,2.451-2.45v-7.352h-6.861v-4.9h11.763Z" transform="translate(71.379 81.789)"/>
@@ -35,11 +40,11 @@ const Navigation = () => (
       </svg>
     </Link>
     <ul>
-      <li><Link to="/" className={style.navigationListTitle}><span className={style.line}></span><b>Home</b></Link></li>
-      <li><Link to="/work" className={style.navigationListTitle}><span className={style.line}></span><b>Work</b></Link></li>
+      <li><Link to="/" className={style.navigationListTitle} onClick={closeNav}><span className={style.line}></span><b>Home</b></Link></li>
+      <li><Link to="/work" className={style.navigationListTitle} onClick={closeNav}><span className={style.line}></span><b>Work</b></Link></li>
       {/*<li><Link to="/blog" className={style.navigationListTitle}><span className={style.line}></span><b>Blog</b></Link></li>*/}
-      <li><Link to="/about" className={style.navigationListTitle}><span className={style.line}></span><b>About</b></Link></li>
-      <li><Link to="/contact" className={style.navigationListTitle}><span className={style.line}></span><b>Contact</b></Link></li>
+      <li><Link to="/about" className={style.navigationListTitle} onClick={closeNav}><span className={style.line}></span><b>About</b></Link></li>
+      <li><Link to="/contact" className={style.navigationListTitle} onClick={closeNav}><span className={style.line}></span><b>Contact</b></Link></li>
     </ul>
     <button className={style.hamburgerOpen} onClick={mobileNavToggle}>Toggle Navigation Open
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
