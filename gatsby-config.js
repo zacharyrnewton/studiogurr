@@ -44,7 +44,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Studio Gurr`,
-        short_name: `StudioGurr`,
+        short_name: `Studio Gurr`,
         start_url: `/`,
         background_color: `#000000`,
         theme_color: `#000000`,
