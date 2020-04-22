@@ -16,11 +16,11 @@ const Archive = ({ data }) => {
           <div className={style.bodyContent}>
             <div className={style.aside}>
               <p>{data.prismic.archive.archive_number && <>◊ {data.prismic.archive.archive_number}<br /></> }Archived {Date(data.prismic.archive.year).getFullYear()}</p>
-              {RichText.render(data.prismic.archive.services)}
+              {data.prismic.archive.services && <>{RichText.render(data.prismic.archive.services)}</>}
             </div>
             <div className={style.body}>
               {RichText.render(data.prismic.archive.title)}
-              {RichText.render(data.prismic.archive.location)}
+              {data.prismic.archive.location && <>{RichText.render(data.prismic.archive.location)}</>}
               <p>{Date(data.prismic.archive.year).getFullYear()}</p>
               <div className={style.bodyCopy}>
                 {RichText.render(data.prismic.archive.body)}
