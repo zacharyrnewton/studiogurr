@@ -54,7 +54,7 @@ export default ({ data }) => {
       };
       return (
         <Slider ref={c => (this.slider = c)} {...settings} className={style.slider}>
-          {archives.map(archive => {
+          {archives.slice(0, 5).map(archive => {
             return (
               <div to={'/work/' + archive.node._meta.uid} key={archive.node._meta.id} className={style.featuredArchive}>
                 <div className={style.sliderControls}>

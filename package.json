@@ -47,7 +47,7 @@
     "deploy": "gatsby clean && GATSBY_ACTIVE_ENV=staging gatsby build --prefix-paths && gh-pages -d public",
     "deploy-staging": "GATSBY_ACTIVE_ENV=staging gatsby build --prefix-paths && gh-pages -d public",
     "deploy-staging-clean": "gatsby clean && GATSBY_ACTIVE_ENV=staging gatsby build --prefix-paths && gh-pages -d public",
-    "deploy-production": "gatsby clean && GATSBY_ACTIVE_ENV=production gatsby build && firebase use default && firebase deploy && firebase open hosting:site",
+    "deploy-production": "GATSBY_ACTIVE_ENV=production gatsby build && firebase use default && firebase deploy && firebase open hosting:site",
     "deploy-production-clean": "gatsby clean && GATSBY_ACTIVE_ENV=production gatsby build && firebase use default && firebase deploy && firebase open hosting:site"
   },
   "repository": {
