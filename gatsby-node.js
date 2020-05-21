@@ -3,47 +3,47 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
-const path = require("path")
+// const path = require("path")
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+// exports.createPages = async ({ graphql, actions }) => {
+//   const { createPage } = actions
 
-  const pages = await graphql(`
-    {
-      prismic {
-        allArchives {
-          edges {
-            node {
-              hero_image
-              title
-              location
-              year
-              body
-              side_image
-              services
-              collaborators
-              production
-              _linkType
-              _meta {
-                id
-                uid
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
+//   const pages = await graphql(`
+//     {
+//       prismic {
+//         allArchives {
+//           edges {
+//             node {
+//               hero_image
+//               title
+//               location
+//               year
+//               body
+//               side_image
+//               services
+//               collaborators
+//               production
+//               _linkType
+//               _meta {
+//                 id
+//                 uid
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   `)
 
-  const archive = path.resolve("src/templates/work.js")
+//   const archive = path.resolve("src/templates/work.js")
 
-  pages.data.prismic.allArchives.edges.forEach(edge => {
-    createPage({
-      path: `/work/${edge.node._meta.uid}`,
-      component: archive,
-      context: {
-        uid: edge.node._meta.uid,
-      },
-    })
-  })
-}
+//   pages.data.prismic.allArchives.edges.forEach(edge => {
+//     createPage({
+//       path: `/work/${edge.node._meta.uid}`,
+//       component: archive,
+//       context: {
+//         uid: edge.node._meta.uid,
+//       },
+//     })
+//   })
+// }
