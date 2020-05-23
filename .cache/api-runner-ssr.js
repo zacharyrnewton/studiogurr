@@ -6,7 +6,7 @@ var plugins = [{
       options: {"plugins":[],"name":"Studio Gurr","short_name":"Studio Gurr","start_url":"/","background_color":"#000000","theme_color":"#000000","display":"minimal-ui","icon":"src/images/favicon.png"},
     },{
       plugin: require('A:/studiogurr/node_modules/gatsby-source-prismic-graphql/gatsby-ssr'),
-      options: {"plugins":[],"repositoryName":"studiogurr"},
+      options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
