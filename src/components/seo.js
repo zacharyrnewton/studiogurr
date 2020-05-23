@@ -26,7 +26,7 @@ const SEO = ( { description, lang, meta, link, title } ) => {
   //   `
   // )
   
-  const metaDescription = description
+  const metaDescription = description || `A graphic design and branding studio located in Boca Raton, Florida.`
 
   return (
     <Helmet
@@ -96,7 +96,7 @@ SEO.defaultProps = {
   lang: `en-US`,
   meta: [],
   link: [],
-  description: `A graphic design and branding studio located in Boca Raton, Florida`,
+  description: `A graphic design and branding studio located in Boca Raton, Florida.`,
 }
 
 SEO.propTypes = {
