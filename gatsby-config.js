@@ -9,7 +9,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Studio Gurr`,
-    description: `Striving for clarity, reduction, and functionality, our design process will emphasize your brand’s messaging and values. Our desire is to create brand symbols, systems, and languages that are full of meaning, convey trust, and last for many years to come. We are a research-driven, disciplined, and passionate group of individuals that function much like a band. Each member plays their own unique instrument, and each is integral to the overall sound, but we all play in unison.`,
+    description: `A graphic design and branding studio located in Boca Raton, Florida.`,
     author: `@studiogurr`,
     url: process.env.SITE_URL,
     siteUrl: process.env.SITE_URL,
@@ -58,8 +58,8 @@ module.exports = {
       options: {
         repositoryName: process.env.PRISMIC_REPOSITORY_NAME, // (REQUIRED, replace with your own)
         accessToken: process.env.PRISMIC_ACCESS_TOKEN, // (optional API access token)
-        path: '/preview', // (optional preview path. Default: /preview)
-        previews: true, // (optional, activated Previews. Default: false)
+        // path: '/preview', // (optional preview path. Default: /preview)
+        // previews: true, // (optional, activated Previews. Default: false)
         // pages: [{ // (optional, builds pages dynamically)
         //   type: 'Archive',         // TypeName from prismic
         //   match: '/archive/:uid',  // Pages will be generated under this pattern
