@@ -3,6 +3,16 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+
+var fs = require('fs');
+var dir = "./.cache/caches/gatsby-source-prismic-graphql"
+
+exports.onPreBootstrap = () => {
+    if (!fs.existsSync(dir)){
+        fs.mkdirSync(dir);
+    } 
+ }
+
 const path = require("path")
 
 exports.createPages = async ({ graphql, actions }) => {

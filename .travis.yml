@@ -18,8 +18,8 @@ before_script:
   - npm install -g gatsby-cli
 
 script:
-  # - GATSBY_ACTIVE_ENV=production gatsby build
-  - gatsby build
+  - GATSBY_ACTIVE_ENV=production gatsby build
+  # - gatsby build
   - echo "Deploying"
 
 

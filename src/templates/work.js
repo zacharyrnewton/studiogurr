@@ -63,7 +63,6 @@ export const pageQuery = graphql`
         archive_number
         side_image
         side_imageSharp {
-          id
           childImageSharp {
             id
             fluid {
@@ -75,9 +74,7 @@ export const pageQuery = graphql`
         location
         hero_image
         hero_imageSharp {
-          id
           childImageSharp {
-            id
             fluid {
               ...GatsbyImageSharpFluid
             }
@@ -88,9 +85,7 @@ export const pageQuery = graphql`
         gallery {
           gallery_image
           gallery_imageSharp {
-            id
             childImageSharp {
-              id
               fluid {
                 ...GatsbyImageSharpFluid
               }
