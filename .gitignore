@@ -69,5 +69,5 @@ node_modules/
 .cache
 
 # Gatsby public
-# public
+public
 node_modules
