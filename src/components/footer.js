@@ -48,7 +48,7 @@ const Footer = () => (
         <ul className={style.footerList}>
           <li><span className={style.line}></span></li>
           <li className={style.footerListTitle}><b>By appointment only</b></li>
-          <li><a href="https://goo.gl/maps/2iCcVYhYfqkwpkcq5" target="_blank" rel="noopener noreferrer">980 N Federal Hwy #110<br/>Boca Raton, FL USA 33432</a></li>
+          <li><a href="https://goo.gl/maps/2iCcVYhYfqkwpkcq5" target="_blank" rel="noopener noreferrer">980 N Federal Hwy #110<br/>Boca Raton, FL 33432</a></li>
         </ul>
       </li>
       <li className={style.footerListContainer}>
