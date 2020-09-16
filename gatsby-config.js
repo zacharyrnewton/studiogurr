@@ -41,13 +41,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        output: `/sitemap.xml`,
-        exclude: [`/preview`],
-      }
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Studio Gurr`,
@@ -74,6 +67,13 @@ module.exports = {
         //   component: require.resolve('./src/templates/archive.js'),
         // }],
       },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        exclude: [`/preview`],
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
