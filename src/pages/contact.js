@@ -11,7 +11,7 @@ const ContactPage = ({ data }) => (
     <SEO title="Contact" />
     <div className={style.contactWrapper}>
       <div className={style.content}>
-        <p><a href="tel:+1833-638-4877" target="_blank" rel="noopener noreferrer">+1 (833) 638-4877</a><br /><a href="mailto:david@studiogurr.com" target="_blank" rel="noopener noreferrer">David@StudioGurr.com</a><br /><br /><a href="https://goo.gl/maps/2iCcVYhYfqkwpkcq5" target="_blank" rel="noopener noreferrer">1250 Elizabeth Ave Suite 1<br />West Palm Beach, FL 33401</a><br /><br /><a href="https://instagram.com/studiogurr" target="_blank" rel="noopener noreferrer">@StudioGurr</a></p>
+        <p><a href="tel:+1833-638-4877" target="_blank" rel="noopener noreferrer">+1 (833) 638-4877</a><br /><a href="mailto:david@studiogurr.com" target="_blank" rel="noopener noreferrer">David@StudioGurr.com</a><br /><br /><a href="https://goo.gl/maps/VPNiamnxWLAnj28v6" target="_blank" rel="noopener noreferrer">1250 Elizabeth Ave Suite 1<br />West Palm Beach, FL 33401</a><br /><br /><a href="https://instagram.com/studiogurr" target="_blank" rel="noopener noreferrer">@StudioGurr</a></p>
         <a className={style.contact} href="mailto:david@studiogurr.com" target="_blank" rel="noopener noreferrer">Let’s work together, ay?</a>
       </div>
       <div className={style.image}><Img className={style.sideImage} fluid={data.prismic.allContacts.edges[0].node.side_imageSharp.childImageSharp.fluid} alt={data.prismic.allContacts.edges[0].node.side_image.alt} /></div>
