@@ -15,29 +15,47 @@ module.exports = {
     siteUrl: process.env.SITE_URL,
   },
   plugins: [
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-sass",
+    "gatsby-plugin-image",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-google-analytics",
       options: {
-        name: `fonts`,
-        path: `${__dirname}/src/fonts`,
+        trackingId: "G-M8ZVRP7D3G",
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    `gatsby-transformer-sharp`,
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
         useMozJpeg: process.env.PLUGIN_SHARP_MOZ_JPEG,
         stripMetadata: true,
         defaultQuality: process.env.PLUGIN_SHARP_QUALITY,
+      },
+    },
+    "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `fonts`,
+        path: `${__dirname}/src/fonts`,
+      },
+      __key: "fonts",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
+    {
+      resolve: `gatsby-source-prismic`,
+      options: {
+        repositoryName: 'studiogurr',
+        accessToken: 'MC5YcElrS2hBQUFDSUFPYkhm.77-9Xe-_ve-_ve-_vQjvv73vv73vv70t77-9Ugsl77-977-977-9be-_vQrvv73vv71n77-9L--_vTt0Inbvv70T',
+        customTypesApiToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoibWFjaGluZTJtYWNoaW5lIiwiZGJpZCI6InN0dWRpb2d1cnItZjk0YzdjYzEtMTQ3Yi00YzIyLWE5MmItM2RkYmYzZjMwYmJmXzMiLCJkYXRlIjoxNjMwODg1NDIxLCJkb21haW4iOiJzdHVkaW9ndXJyIiwiaWF0IjoxNjMwODg1NDIxfQ.liQNCPt-klSbbm79hP9XykRkULmwSBUU01ebr8SbFt8'
       },
     },
     {
@@ -52,32 +70,13 @@ module.exports = {
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-cname`,
-    {
-      resolve: `gatsby-source-prismic-graphql`,
-      options: {
-        repositoryName: process.env.PRISMIC_REPOSITORY_NAME, // (REQUIRED, replace with your own)
-        accessToken: process.env.PRISMIC_ACCESS_TOKEN, // (optional API access token)
-        // path: '/preview', // (optional preview path. Default: /preview)
-        // previews: true, // (optional, activated Previews. Default: false)
-        // pages: [{ // (optional, builds pages dynamically)
-        //   type: 'Archive',         // TypeName from prismic
-        //   match: '/archive/:uid',  // Pages will be generated under this pattern
-        //   path: '/archive/draft',        // Placeholder page for unpublished documents
-        //   component: require.resolve('./src/templates/archive.js'),
-        // }],
-      },
-    },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
-        exclude: [`/preview`],
+        excludes: [`/preview`],
       }
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
-  pathPrefix:  ``,
-}
+  pathPrefix: ``
+};

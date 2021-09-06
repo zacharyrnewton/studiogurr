@@ -1,56 +1,61 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import { RichText } from 'prismic-reactjs'
-
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import style from "../sass/modules/about.module.sass"
+import Seo from "../components/seo"
+import * as style from "../sass/modules/about.module.sass"
 
-const AboutPage = ( { data } ) => (
+const AboutPage = ({ data }) => (
   <Layout>
-    <SEO title="About" />
+    <Seo title="About" />
     <div className={style.aboutWrapper}>
       <div className={style.content}>
-        <p>{RichText.render(data.prismic.allAbouts.edges[0].node.about_body)}</p>
+        <p>{data.prismicAbout.data.about_body.text}</p>
         <a className={style.contact} href="mailto:david@studiogurr.com" target="_blank" rel="noopener noreferrer">Let’s work together, ay?</a>
       </div>
-      <div className={style.image}><Img className={style.sideImage} fluid={data.prismic.allAbouts.edges[0].node.side_imageSharp.childImageSharp.fluid} alt={data.prismic.allAbouts.edges[0].node.side_image.alt} /></div>
-      <Img className={style.fullWidthImage} fluid={data.prismic.allAbouts.edges[0].node.full_width_imageSharp.childImageSharp.fluid} alt={data.prismic.allAbouts.edges[0].node.full_width_image.alt} />
-      
+      <div className={style.image}><Img className={style.sideImage} fluid={data.prismicAbout.data.side_image.fluid} alt={data.prismicAbout.data.side_image.alt} /></div>
+      <Img className={style.fullWidthImage} fluid={data.prismicAbout.data.full_width_image.fluid} alt={data.prismicAbout.data.full_width_image.alt} />
     </div>
-
   </Layout>
 )
 
 
 export const query = graphql`
   {
-    prismic {
-      allAbouts {
-        edges {
-          node {
-            page_title
-            full_width_image
-            full_width_imageSharp {
-              childImageSharp {
-                id
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            side_image
-            side_imageSharp {
-              childImageSharp {
-                id
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            about_body
-            _linkType
+    prismicAbout {
+      data {
+        about_body {
+          html
+          raw
+          text
+        }
+        full_width_image {
+          alt
+          fluid {
+            src
+            aspectRatio
+            base64
+            sizes
+            srcSet
+            srcSetWebp
+            srcWebp
+          }
+        }
+        page_title {
+          text
+          raw
+          html
+        }
+        side_image {
+          alt
+          fluid {
+            src
+            aspectRatio
+            base64
+            sizes
+            srcSet
+            srcSetWebp
+            srcWebp
           }
         }
       }
@@ -59,5 +64,3 @@ export const query = graphql`
 `
 
 export default AboutPage
-
-

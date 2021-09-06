@@ -1,17 +1,11 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+// var fs = require('fs');
+// var dir = "./.cache/caches/gatsby-source-prismic"
 
-var fs = require('fs');
-var dir = "./.cache/caches/gatsby-source-prismic-graphql"
-
-exports.onPreBootstrap = () => {
-    if (!fs.existsSync(dir)){
-        fs.mkdirSync(dir);
-    } 
- }
+// exports.onPreBootstrap = () => {
+//   if (!fs.existsSync(dir)) {
+//     fs.mkdirSync(dir);
+//   }
+// }
 
 const path = require("path")
 
@@ -20,25 +14,68 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const pages = await graphql(`
     {
-      prismic {
-        allArchives {
-          edges {
-            node {
-              hero_image
-              title
-              location
+      allPrismicArchive{
+        edges {
+          node {
+            data {
               year
-              body
-              side_image
-              services
-              collaborators
-              production
-              _linkType
-              _meta {
-                id
-                uid
+              body {
+                text
+                html
+                raw
+              }
+              location {
+                text
+                raw
+                html
+              }
+              title {
+                raw
+                text
+                html
+              }
+              services {
+                text
+                raw
+                html
+              }
+              hero_image {
+                alt
+                fluid {
+                  src
+                  aspectRatio
+                  base64
+                  sizes
+                  srcSet
+                  srcSetWebp
+                  srcWebp
+                }
+              }
+              collaborators {
+                html
+                raw
+                text
+              }
+              production {
+                html
+                raw
+                text
+              }
+              side_image {
+                alt
+                fluid {
+                  aspectRatio
+                  base64
+                  sizes
+                  src
+                  srcSet
+                  srcSetWebp
+                  srcWebp
+                }
               }
             }
+            uid
+            id
           }
         }
       }
@@ -47,12 +84,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const archive = path.resolve("src/templates/work.js")
 
-  pages.data.prismic.allArchives.edges.forEach(edge => {
+  pages.data.allPrismicArchive.edges.forEach(edge => {
     createPage({
-      path: `/work/${edge.node._meta.uid}`,
+      path: `/work/${edge.node.uid}`,
       component: archive,
       context: {
-        uid: edge.node._meta.uid,
+        uid: edge.node.uid,
       },
     })
   })
