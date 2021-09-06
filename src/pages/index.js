@@ -19,7 +19,7 @@ const Home = ({ data }) => {
         {archives.map(archive => {
           return (
             <Link to={'/work/' + archive.node.uid} key={archive.node.id} aria-label={archive.node.data.title} className={style.featuredArchive}>
-              <Img className={style.imageMobile} fluid={archive.node.hero_image.fluid} alt={archive.node.hero_image.alt} />
+              <Img className={style.imageMobile} fluid={archive.node.data.hero_image.fluid} alt={archive.node.data.hero_image.alt} />
             </Link>
           )
         })}

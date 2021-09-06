@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Navigation from "./navigation"
 import Footer from "./footer"
-import "../sass/config/config.sass"
+import * as config from "../sass/config/config.sass"
 import * as style from "../sass/modules/layout.module.sass"
 
 // Window Resize Animation Stopper
@@ -27,9 +27,7 @@ const Layout = ({ children }) => {
     <>
       <div className={style.layoutGrid} id="pageTop">
         <Navigation />
-        <main
-        // className={style.main}
-        >{children}</main>
+        <main className={config.main}>{children}</main>
         <Footer />
       </div>
     </>
