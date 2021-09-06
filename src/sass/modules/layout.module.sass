@@ -9,7 +9,6 @@
   position: relative
   padding: 0
   box-sizing: border-box
-
   main
     position: relative
     margin: 0px 128px
@@ -18,18 +17,22 @@
     align-items: flex-start
     justify-content: center
     box-sizing: border-box
+    max-width: 100%
 
 @media screen and (max-width: 1000px)
   .layoutGrid
     main
+      max-width: calc(100vw - 128px)
       margin: 0px 64px
 
 @media screen and (max-width: 750px)
   .layoutGrid
     main
+      max-width: calc(100vw - 64px)
       margin: 0px 32px
 
 @media screen and (max-width: 500px)
   .layoutGrid
     main
+      max-width: calc(100vw - 32px)
       margin: 0px 16px
