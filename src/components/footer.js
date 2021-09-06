@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
-// import PropTypes from "prop-types"
 import React from "react"
-import style from "../sass/modules/footer.module.sass"
+import * as style from "../sass/modules/footer.module.sass"
 
 const Footer = () => (
   <footer className={style.footer}>
@@ -48,7 +47,7 @@ const Footer = () => (
         <ul className={style.footerList}>
           <li><span className={style.line}></span></li>
           <li className={style.footerListTitle}><b>By appointment only</b></li>
-          <li><a href="https://goo.gl/maps/2iCcVYhYfqkwpkcq5" target="_blank" rel="noopener noreferrer">1250 Elizabeth Ave Suite 1<br />West Palm Beach, FL 33401</a></li>
+          <li><a href="https://goo.gl/maps/NhrRK2anwCBh4A6U7" target="_blank" rel="noopener noreferrer">1016 Clare Ave Suite 5<br />West Palm Beach, FL 33401</a></li>
         </ul>
       </li>
       <li className={style.footerListContainer}>
@@ -73,13 +72,5 @@ const Footer = () => (
     </ul>
   </footer>
 )
-
-// Footer.propTypes = {
-//   siteTitle: PropTypes.string,
-// }
-//
-// Footer.defaultProps = {
-//   siteTitle: ``,
-// }
 
 export default Footer

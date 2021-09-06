@@ -1,23 +1,23 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import style from "../sass/modules/archiveIndex.module.sass"
-import { RichText, Date } from 'prismic-reactjs'
+import Seo from "../components/seo"
+import * as style from "../sass/modules/archiveIndex.module.sass"
+import { Date } from 'prismic-reactjs'
 import Img from "gatsby-image"
 
-const Archives = ( { archives } ) => {
+const Archives = ({ archives }) => {
   if (!archives) return null
   return (
     <div className={style.archiveWrapper}>
       {archives.map(archive => {
         return (
-          <Link to={'/work/' + archive.node._meta.uid} key={archive.node._meta.id} className={style.archive}>
-            <Img className={style.thumbnail} fluid={archive.node.hero_imageSharp.childImageSharp.fluid} alt={archive.node.hero_image.alt}/>
+          <Link to={'/work/' + archive.node.uid} key={archive.node.id} className={style.archive}>
+            <Img className={style.thumbnail} fluid={archive.node.data.hero_image.fluid} alt={archive.node.data.hero_image.alt} />
             <div>
-              <h2>{RichText.asText(archive.node.title)}</h2>
-              <p>{RichText.asText(archive.node.location)}</p>
-              <p>{Date(archive.node.year).getFullYear()}</p>
+              <h2>{archive.node.data.title.text}</h2>
+              <p>{archive.node.data.location.text}</p>
+              <p>{Date(archive.node.data.year).getFullYear()}</p>
             </div>
           </Link>
         )
@@ -26,42 +26,62 @@ const Archives = ( { archives } ) => {
   )
 }
 
-export default ({ data }) => {
-  const archives = data.prismic.allArchives.edges
+const Work = ({ data }) => {
+  const archives = data.allPrismicArchive.edges
 
   return (
     <Layout>
-      <SEO title="Work" />
+      <Seo title="Work" />
       <Archives archives={archives} />
     </Layout>
   )
 }
 
+export default Work;
+
 export const pageQuery = graphql`
   query ArchiveIndex {
-    prismic {
-      allArchives(sortBy: year_DESC) {
-        edges {
-          node {
-            title
-            location
+    allPrismicArchive(sort: {order: DESC, fields: data___year}) {
+      edges {
+        node {
+          data {
+            archive_number
             year
-            hero_image
-            hero_imageSharp {
-              id
-              uid
-              childImageSharp {
-                id
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
+            body {
+              text
+              html
+              raw
+            }
+            location {
+              text
+              raw
+              html
+            }
+            title {
+              raw
+              text
+              html
+            }
+            services {
+              text
+              raw
+              html
+            }
+            hero_image {
+              alt
+              fluid {
+                src
+                aspectRatio
+                base64
+                sizes
+                srcSet
+                srcSetWebp
+                srcWebp
               }
             }
-            _meta {
-              id
-              uid
-            }
           }
+          uid
+          id
         }
       }
     }

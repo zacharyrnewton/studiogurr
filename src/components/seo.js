@@ -11,7 +11,7 @@ import Helmet from "react-helmet"
 // import { useStaticQuery, graphql } from "gatsby"
 import ogImage from "../images/og.png"
 
-const SEO = ( { description, lang, meta, link, title } ) => {
+const Seo = ({ description, lang, meta, link, title }) => {
   // const { site } = useStaticQuery(
   //   graphql`
   //     query {
@@ -25,7 +25,7 @@ const SEO = ( { description, lang, meta, link, title } ) => {
   //     }
   //   `
   // )
-  
+
   const metaDescription = description || `A graphic design and branding studio located in Boca Raton, Florida.`
 
   return (
@@ -92,14 +92,14 @@ const SEO = ( { description, lang, meta, link, title } ) => {
   )
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   lang: `en-US`,
   meta: [],
   link: [],
   description: `A graphic design and branding studio located in Boca Raton, Florida.`,
 }
 
-SEO.propTypes = {
+Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   author: PropTypes.string,
@@ -108,4 +108,4 @@ SEO.propTypes = {
   title: PropTypes.string.isRequired,
 }
 
-export default SEO
+export default Seo
