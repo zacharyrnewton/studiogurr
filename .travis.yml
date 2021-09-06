@@ -2,16 +2,15 @@ language: node_js
 node_js:
   - "10.14.2"
 
-cache: 
-  npm: true
-  directories:
-    - "node_modules"
+# cache:
+#   npm: true
+#   directories:
+#     - "node_modules"
 
+# before_install:
 
-before_install:
-
-install: 
-  - npm ci
+install:
+  - npm install
   - npm install -g firebase-tools
 
 before_script:
@@ -22,24 +21,22 @@ script:
   # - gatsby build
   - echo "Deploying"
 
-
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN
+# after_failure:
 
-after_failure:
+# after_script:
 
-after_script:
+# before_deploy:
 
-before_deploy:
+# deploy:
+# provider: pages
+# skip_cleanup: true
+# github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+# keep_history: true
+# target_branch: gh-pages
+# local_dir: public
+# on:
+#   branch: staging
 
-deploy:
-  # provider: pages
-  # skip_cleanup: true
-  # github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  # keep_history: true
-  # target_branch: gh-pages
-  # local_dir: public
-  # on:
-  #   branch: staging
-
-after_deploy:
+# after_deploy:
