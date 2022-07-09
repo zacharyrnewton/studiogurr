@@ -47,7 +47,9 @@ const Footer = () => (
         <ul className={style.footerList}>
           <li><span className={style.line}></span></li>
           <li className={style.footerListTitle}><b>By appointment only</b></li>
-          <li><a href="https://goo.gl/maps/NhrRK2anwCBh4A6U7" target="_blank" rel="noopener noreferrer">1016 Clare Ave Suite 5<br />West Palm Beach, FL 33401</a></li>
+          {/* <li><a href="https://goo.gl/maps/NhrRK2anwCBh4A6U7" target="_blank" rel="noopener noreferrer">1016 Clare Ave Suite 5<br />West Palm Beach, FL 33401</a></li> */}
+          <li><p>"The Sunshine State"<br />West Palm Beach, Florida</p></li>
+          
         </ul>
       </li>
       <li className={style.footerListContainer}>
