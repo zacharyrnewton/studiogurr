@@ -19,7 +19,7 @@
     "deploy-production-clean": "gatsby clean && GATSBY_ACTIVE_ENV=production gatsby build && firebase use default && firebase deploy && firebase open hosting:site"
   },
   "dependencies": {
-    "gatsby": "^3.13.0",
+    "gatsby": "^3.15.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-google-analytics": "^3.13.0",
     "gatsby-plugin-image": "^1.13.0",
