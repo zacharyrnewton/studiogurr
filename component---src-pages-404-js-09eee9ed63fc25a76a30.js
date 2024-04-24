@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkstudiogurr=self.webpackChunkstudiogurr||[]).push([[125],{6267:function(e,t,u){u.r(t),u.d(t,{default:function(){return l}});var n=u(6540),r=u(1997),a=u(9475);var l=()=>n.createElement(r.A,null,n.createElement(a.A,{title:"404: Not found"}),n.createElement("h1",{className:"_404-module--errorTitle--314d7"},"404, Page not found"),n.createElement("p",null,"You just hit a URL that doesn't exist... the sadness."))}}]);
+//# sourceMappingURL=component---src-pages-404-js-09eee9ed63fc25a76a30.js.map
