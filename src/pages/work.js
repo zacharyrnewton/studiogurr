@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as style from "../sass/modules/archiveIndex.module.sass"
 import { Date } from 'prismic-reactjs'
-import Img from "gatsby-image"
+import {GatsbyImage} from "gatsby-plugin-image"
 
 const Archives = ({ archives }) => {
   if (!archives) return null
@@ -13,7 +13,7 @@ const Archives = ({ archives }) => {
       {archives.map(archive => {
         return (
           <Link to={'/work/' + archive.node.uid} key={archive.node.id} className={style.archive}>
-            <Img className={style.thumbnail} fluid={archive.node.data.hero_image.fluid} alt={archive.node.data.hero_image.alt} />
+            <GatsbyImage className={style.thumbnail} image={archive.node.data.hero_image.gatsbyImageData} alt={archive.node.data.hero_image.alt} />
             <div>
               <h2>{archive.node.data.title.text}</h2>
               <p>{archive.node.data.location.text}</p>
@@ -41,7 +41,7 @@ export default Work;
 
 export const pageQuery = graphql`
   query ArchiveIndex {
-    allPrismicArchive(sort: {order: DESC, fields: data___year}) {
+    allPrismicArchive(sort: {data: {year: DESC}}) {
       edges {
         node {
           data {
@@ -50,34 +50,26 @@ export const pageQuery = graphql`
             body {
               text
               html
-              raw
+              richText
             }
             location {
               text
-              raw
+              richText
               html
             }
             title {
-              raw
+              richText
               text
               html
             }
             services {
               text
-              raw
+              richText
               html
             }
             hero_image {
               alt
-              fluid {
-                src
-                aspectRatio
-                base64
-                sizes
-                srcSet
-                srcSetWebp
-                srcWebp
-              }
+              gatsbyImageData
             }
           }
           uid

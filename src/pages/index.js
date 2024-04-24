@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as style from "../sass/modules/index.module.sass"
 import { Date } from "prismic-reactjs"
-import Img from "gatsby-image"
+import {GatsbyImage} from "gatsby-plugin-image"
 import React, { Component } from "react"
 import Slider from "react-slick"
 import SplashScreen from "../components/splash-screen"
@@ -19,7 +19,7 @@ const Home = ({ data }) => {
         {archives.map(archive => {
           return (
             <Link to={'/work/' + archive.node.uid} key={archive.node.id} aria-label={archive.node.data.title} className={style.featuredArchive}>
-              <Img className={style.imageMobile} fluid={archive.node.data.hero_image.fluid} alt={archive.node.data.hero_image.alt} />
+              <GatsbyImage className={style.imageMobile} image={archive.node.data.hero_image.gatsbyImageData} alt={archive.node.data.hero_image.alt} />
             </Link>
           )
         })}
@@ -68,7 +68,7 @@ const Home = ({ data }) => {
                   </button>
                   <Link aria-label={"View " + archive.node.data.title.text} to={'/work/' + archive.node.uid} key={archive.node.id} className={style.goToWork}></Link>
                 </div>
-                <Img className={style.image} fluid={archive.node.data.hero_image.fluid} alt={archive.node.data.hero_image.alt} />
+                <GatsbyImage className={style.image} image={archive.node.data.hero_image.gatsbyImageData} alt={archive.node.data.hero_image.alt} />
                 <Link to={'/work/' + archive.node.uid} key={archive.node.id} className={style.featuredArchive}>
                   <div className={style.text}>
                     <h2>{archive.node.data.title.text}</h2>
@@ -111,7 +111,7 @@ export default Home;
 
 export const pageQuery = graphql`
   query SliderData {
-    allPrismicArchive(sort: {order: DESC, fields: data___year}) {
+    allPrismicArchive(sort: {data: {year: DESC}}) {
       edges {
         node {
           data {
@@ -120,34 +120,26 @@ export const pageQuery = graphql`
             body {
               text
               html
-              raw
+              richText
             }
             location {
               text
-              raw
+              richText
               html
             }
             title {
-              raw
+              richText
               text
               html
             }
             services {
               text
-              raw
+              richText
               html
             }
             hero_image {
               alt
-              fluid {
-                src
-                aspectRatio
-                base64
-                sizes
-                srcSet
-                srcSetWebp
-                srcWebp
-              }
+              gatsbyImageData
             }
           }
           uid

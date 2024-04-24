@@ -22,56 +22,40 @@ exports.createPages = async ({ graphql, actions }) => {
               body {
                 text
                 html
-                raw
+                richText
               }
               location {
                 text
-                raw
+                richText
                 html
               }
               title {
-                raw
+                richText
                 text
                 html
               }
               services {
                 text
-                raw
+                richText
                 html
               }
               hero_image {
                 alt
-                fluid {
-                  src
-                  aspectRatio
-                  base64
-                  sizes
-                  srcSet
-                  srcSetWebp
-                  srcWebp
-                }
+                gatsbyImageData
               }
               collaborators {
                 html
-                raw
+                richText
                 text
               }
               production {
                 html
-                raw
+                richText
                 text
               }
               side_image {
                 alt
-                fluid {
-                  aspectRatio
-                  base64
-                  sizes
-                  src
-                  srcSet
-                  srcSetWebp
-                  srcWebp
-                }
+                gatsbyImageData
               }
             }
             uid

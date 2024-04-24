@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import {GatsbyImage} from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as style from "../sass/modules/contact.module.sass"
@@ -24,8 +24,8 @@ const ContactPage = ({ data }) => (
         </p>
         <a className={style.contact} href="mailto:david@studiogurr.com" target="_blank" rel="noopener noreferrer">Let’s work together, ay?</a>
       </div>
-      <div className={style.image}><Img className={style.sideImage} fluid={data.prismicContact.data.side_image.fluid} alt={data.prismicContact.data.side_image.alt} /></div>
-      <Img className={style.fullWidthImage} fluid={data.prismicContact.data.full_width_image.fluid} alt={data.prismicContact.data.full_width_image.alt} />
+      <div className={style.image}><GatsbyImage className={style.sideImage} image={data.prismicContact.data.side_image.gatsbyImageData} alt={data.prismicContact.data.side_image.alt} /></div>
+      <GatsbyImage className={style.fullWidthImage} image={data.prismicContact.data.full_width_image.gatsbyImageData} alt={data.prismicContact.data.full_width_image.alt} />
     </div>
   </Layout>
 )
@@ -35,32 +35,16 @@ export const query = graphql`
     prismicContact {
       data {
         full_width_image {
-          fluid {
-            aspectRatio
-            base64
-            srcWebp
-            srcSetWebp
-            srcSet
-            src
-            sizes
-          }
+          gatsbyImageData
           alt
         }
         page_title {
           text
-          raw
+          richText
           html
         }
         side_image {
-          fluid {
-            aspectRatio
-            base64
-            sizes
-            src
-            srcSet
-            srcSetWebp
-            srcWebp
-          }
+          gatsbyImageData
           alt
         }
       }
