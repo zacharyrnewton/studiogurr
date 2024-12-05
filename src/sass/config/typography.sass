@@ -1,3 +1,7 @@
+@use "./vars" as vars
+@use "sass:color"
+
+
 @font-face
   font-family: "GT America"
   font-weight: normal
@@ -30,134 +34,131 @@
   src: url("../../fonts/GT-America-Standard-Bold-Italic.woff2") format("woff2"), url("../../fonts/GT-America-Standard-Bold-Italic.woff") format("woff"), url("../../fonts/GT-America-Standard-Bold-Italic.ttf") format("ttf"), url("../../fonts/GT-America-Standard-Bold-Italic.otf") format("otf"), url("../../fonts/GT-America-Standard-Bold-Italic.eot") format("eot")
   font-display: swap
 
-@import "./vars"
-
-
 
 h1, .h1
-  font: $h1-font
-  letter-spacing: $h1-letter-spacing
-  color: var(--color-dm-typo-emp-1, $color-dm-typo-emp-1)
+  font: vars.$h1-font
+  letter-spacing: vars.$h1-letter-spacing
+  color: var(--color-dm-typo-emp-1, vars.$color-dm-typo-emp-1)
   margin: 0
   padding: 0
 
 h2, .h2
-  font: $h2-font
-  letter-spacing: $h2-letter-spacing
-  color: var(--color-dm-typo-emp-1, $color-dm-typo-emp-1)
+  font: vars.$h2-font
+  letter-spacing: vars.$h2-letter-spacing
+  color: var(--color-dm-typo-emp-1, vars.$color-dm-typo-emp-1)
   margin: 0
   padding: 0
 
 h3, .h3
-  font: $h3-font
-  letter-spacing: $h3-letter-spacing
-  color: var(--color-dm-typo-emp-1, $color-dm-typo-emp-1)
+  font: vars.$h3-font
+  letter-spacing: vars.$h3-letter-spacing
+  color: var(--color-dm-typo-emp-1, vars.$color-dm-typo-emp-1)
   margin: 0
   padding: 0
 
 h4, .h4
-  font: $h4-font
-  letter-spacing: $h4-letter-spacing
-  color: var(--color-dm-typo-emp-1, $color-dm-typo-emp-1)
+  font: vars.$h4-font
+  letter-spacing: vars.$h4-letter-spacing
+  color: var(--color-dm-typo-emp-1, vars.$color-dm-typo-emp-1)
   margin: 0
   padding: 0
 
 h5, .h5
-  font: $h5-font
-  letter-spacing: $h5-letter-spacing
-  color: var(--color-dm-typo-emp-1, $color-dm-typo-emp-1)
+  font: vars.$h5-font
+  letter-spacing: vars.$h5-letter-spacing
+  color: var(--color-dm-typo-emp-1, vars.$color-dm-typo-emp-1)
   margin: 0
   padding: 0
 
 h6, .h6
-  font: $h6-font
-  letter-spacing: $h6-letter-spacing
-  color: var(--color-dm-typo-emp-1, $color-dm-typo-emp-1)
+  font: vars.$h6-font
+  letter-spacing: vars.$h6-letter-spacing
+  color: var(--color-dm-typo-emp-1, vars.$color-dm-typo-emp-1)
   margin: 0
   padding: 0
 
 p, .body1, li
-  font: $body1-font
-  letter-spacing: $body1-letter-spacing
-  color: var(--color-dm-typo-emp-1, $color-dm-typo-emp-1)
+  font: vars.$body1-font
+  letter-spacing: vars.$body1-letter-spacing
+  color: var(--color-dm-typo-emp-1, vars.$color-dm-typo-emp-1)
   margin: 0
   padding: 0
 
 .body2
-  font: $body2-font
-  letter-spacing: $body2-letter-spacing
-  color: var(--color-dm-typo-emp-1, $color-dm-typo-emp-1)
+  font: vars.$body2-font
+  letter-spacing: vars.$body2-letter-spacing
+  color: var(--color-dm-typo-emp-1, vars.$color-dm-typo-emp-1)
   margin: 0
   padding: 0
 
 .subtitle1
-  font: $subtitle1-font
-  letter-spacing: $subtitle1-letter-spacing
-  color: var(--color-dm-typo-emp-1, $color-dm-typo-emp-1)
+  font: vars.$subtitle1-font
+  letter-spacing: vars.$subtitle1-letter-spacing
+  color: var(--color-dm-typo-emp-1, vars.$color-dm-typo-emp-1)
   margin: 0
   padding: 0
 
 .subtitle2
-  font: $subtitle2-font
-  letter-spacing: $subtitle2-letter-spacing
-  color: var(--color-dm-typo-emp-1, $color-dm-typo-emp-1)
+  font: vars.$subtitle2-font
+  letter-spacing: vars.$subtitle2-letter-spacing
+  color: var(--color-dm-typo-emp-1, vars.$color-dm-typo-emp-1)
   margin: 0
   padding: 0
 
 .btn
-  font: $button-font
-  letter-spacing: $button-letter-spacing
+  font: vars.$button-font
+  letter-spacing: vars.$button-letter-spacing
   padding: 10px 1rem
-  border-radius: $button-border-radius
+  border-radius: vars.$button-border-radius
   text-decoration: none
-  color: var(--color-base-alt-1, $color-base-alt-1)
-  transition: all $transition-fast
+  color: var(--color-base-alt-1, vars.$color-base-alt-1)
+  transition: all vars.$transition-fast
   user-select: none
   outline: none
   &:hover, &:focus
-    color: var(--color-primary, $color-primary)
-    background-color: var(--color-base-1, $color-base-1)
+    color: var(--color-primary, vars.$color-primary)
+    background-color: var(--color-base-1, vars.$color-base-1)
     text-decoration: none
   &:active
-    background-color: var(--color-base-2, $color-base-2)
+    background-color: var(--color-base-2, vars.$color-base-2)
     text-decoration: none
 
 .btn-primary
-  color: var(--color-absolute-white, $color-absolute-white)
+  color: var(--color-absolute-white, vars.$color-absolute-white)
   outline: none
-  background-color: var(--color-primary, $color-primary)
+  background-color: var(--color-primary, vars.$color-primary)
   &:hover, &:focus
-    color: var(--color-absolute-white, $color-absolute-white)
-    background-color: darken($color-primary, 5%)
+    color: var(--color-absolute-white, vars.$color-absolute-white)
+    background-color: color.adjust(vars.$color-primary, $lightness: -5%)
     text-decoration: none
   &:active
-    background-color: darken($color-primary, 15%)
+    background-color: color.adjust(vars.$color-primary, $lightness: -15%)
     text-decoration: none
 
 .btn-primary-ghost
-  color: var(--color-primary, $color-primary)
+  color: var(--color-primary, vars.$color-primary)
   outline: none
   background-color: none
   text-decoration: none
   &:hover, &:focus
-    color: var(--color-primary, $color-primary)
+    color: var(--color-primary, vars.$color-primary)
     background-color: transparent
     text-decoration: underline
   &:active
-    background-color: var(--color-base-2, $color-base-2)
+    background-color: var(--color-base-2, vars.$color-base-2)
     text-decoration: none
 
 .caption
-  font: $caption-font
-  letter-spacing: $caption-letter-spacing
-  color: var(--color-dm-typo-emp-1, $color-dm-typo-emp-1)
+  font: vars.$caption-font
+  letter-spacing: vars.$caption-letter-spacing
+  color: var(--color-dm-typo-emp-1, vars.$color-dm-typo-emp-1)
   margin: 0
   padding: 0
 
 .overline
-  font: $overline-font
-  letter-spacing: $overline-letter-spacing
-  color: var(--color-primary, $color-primary)
+  font: vars.$overline-font
+  letter-spacing: vars.$overline-letter-spacing
+  color: var(--color-primary, vars.$color-primary)
   text-transform: uppercase
   margin: 0
   padding: 0

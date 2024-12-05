@@ -1,4 +1,4 @@
-@import "../config/vars"
+@use "../config/vars" as vars
 
 .archiveWrapper
   margin: 64px auto 64px auto
@@ -23,15 +23,15 @@
     position: relative
     h2
       font-weight: bold
-      color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
+      color: var(--color-typo-emp-1, vars.$color-dm-typo-emp-1)
     p
-      color: var(--color-typo-emp-2, $color-dm-typo-emp-2)
+      color: var(--color-typo-emp-2, vars.$color-dm-typo-emp-2)
     ul
       list-style: none
       padding: 0
       margin: 20px 0 0 0
       li
-        color: var(--color-typo-emp-2, $color-dm-typo-emp-2)
+        color: var(--color-typo-emp-2, vars.$color-dm-typo-emp-2)
     .thumbnail
       position: relative
       width: 100%
@@ -40,9 +40,9 @@
       object-fit: cover
       z-index: 0
     &:hover
-      color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
+      color: var(--color-typo-emp-1, vars.$color-dm-typo-emp-1)
       p, li
-        color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
+        color: var(--color-typo-emp-1, vars.$color-dm-typo-emp-1)
 
 
 @media screen and (max-width: 600px)

@@ -1,4 +1,4 @@
-@import "../config/vars"
+@use "../config/vars" as vars
 
 .slider
   position: absolute
@@ -18,7 +18,7 @@
     width: 100%
     margin: 0 auto 64px auto
     text-decoration: none
-    color: var(--color-base-alt, $color-base)
+    color: var(--color-base-alt, vars.$color-base)
     overflow: hidden
     .image
       width: 100%
@@ -68,19 +68,19 @@
       margin: 16px 0 0 0
       h2
         font-weight: bold
-        color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
+        color: var(--color-typo-emp-1, vars.$color-dm-typo-emp-1)
       p
-        color: var(--color-typo-emp-2, $color-dm-typo-emp-2)
+        color: var(--color-typo-emp-2, vars.$color-dm-typo-emp-2)
       &:hover
         h2, p
           text-decoration: underline
-          color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
+          color: var(--color-typo-emp-1, vars.$color-dm-typo-emp-1)
 
 .featuredArchive
   width: 100%
   margin: 0 auto 32px auto
   text-decoration: none
-  color: var(--color-base-alt, $color-base)
+  color: var(--color-base-alt, vars.$color-base)
   overflow: hidden
   .imageMobile
     width: 100%
@@ -90,13 +90,13 @@
     margin: 16px 0 0 0
     h2
       font-weight: bold
-      color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
+      color: var(--color-typo-emp-1, vars.$color-dm-typo-emp-1)
     p
-      color: var(--color-typo-emp-2, $color-dm-typo-emp-2)
+      color: var(--color-typo-emp-2, vars.$color-dm-typo-emp-2)
     &:hover
       h2, p
         text-decoration: underline
-        color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
+        color: var(--color-typo-emp-1, vars.$color-dm-typo-emp-1)
 
 
 @media screen and (max-width: 1000px)

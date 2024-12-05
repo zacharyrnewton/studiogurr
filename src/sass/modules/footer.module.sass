@@ -1,4 +1,4 @@
-@import "../config/vars"
+@use "../config/vars" as vars
 
 .footer
   display: grid
@@ -14,7 +14,7 @@
       height: auto
       g
         path
-          fill: var(--color-base-alt, $color-base-alt)
+          fill: var(--color-base-alt, vars.$color-base-alt)
   ul.footerListWrapper
     display: grid
     grid-template-columns: repeat(auto-fit, minmax(125px, 1fr))
@@ -40,7 +40,7 @@
       padding: 0 0 0 24px
       margin: 0 64px 0 0
       max-width: 325px
-      color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
+      color: var(--color-typo-emp-1, vars.$color-dm-typo-emp-1)
       box-sizing: border-box
       height: 100%
       li
@@ -59,7 +59,7 @@
         position: absolute
         display: block
         width: 1px
-        background-color: var(--color-base-alt, $color-base-alt)
+        background-color: var(--color-base-alt, vars.$color-base-alt)
         top: 0
         left: 0
         bottom: 0

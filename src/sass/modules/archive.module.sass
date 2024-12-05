@@ -1,4 +1,4 @@
-@import "../config/vars"
+@use "../config/vars" as vars
 
 .archiveContentWrapper
   width: 100%
@@ -24,7 +24,7 @@
       align-content: start
       justify-items: start
       align-items: start
-      color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
+      color: var(--color-typo-emp-1, vars.$color-dm-typo-emp-1)
       .aside
         display: none
         grid-area: aside
@@ -48,7 +48,7 @@
         grid-area: body
         width: 100%
         max-width: 500px
-        color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
+        color: var(--color-typo-emp-1, vars.$color-dm-typo-emp-1)
         h1
           font-weight: bold
           color: inherit

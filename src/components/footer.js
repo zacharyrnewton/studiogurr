@@ -39,7 +39,7 @@ const Footer = () => (
         <ul className={style.footerList}>
           <li><span className={style.line}></span></li>
           <li className={style.footerListTitle}><b>Start a project</b></li>
-          <li><a href="tel:+1833-638-4877" target="_blank" rel="noopener noreferrer">+1 (833) 638-4877</a></li>
+          <li><a href="tel:+1-888-973-4457" target="_blank" rel="noopener noreferrer">+1 (888) 973-4557</a></li>
           <li><a href="mailto:david@studiogurr.com" target="_blank" rel="noopener noreferrer">David@StudioGurr.com</a></li>
         </ul>
       </li>

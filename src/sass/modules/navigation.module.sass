@@ -1,4 +1,5 @@
-@import "../config/vars"
+@use "../config/vars" as vars
+@use "sass:color"
 
 .navigation
   display: grid
@@ -25,14 +26,14 @@
       margin: 0 64px 0 0
       max-width: 125px
       height: 80px
-      color: var(--color-typo-emp-1, $color-dm-typo-emp-1)
+      color: var(--color-typo-emp-1, vars.$color-dm-typo-emp-1)
       box-sizing: border-box
       cursor: pointer
       span.line
         position: absolute
         display: block
         width: 1px
-        background-color: var(--color-base-alt, $color-base-alt)
+        background-color: var(--color-base-alt, vars.$color-base-alt)
         top: 0
         left: 0
         bottom: 0
@@ -55,11 +56,11 @@
     outline: none
     svg
       path.path
-        fill: var(--color-base-alt, $color-base-alt)
+        fill: var(--color-base-alt, vars.$color-base-alt)
     &:hover
-      background-color: transparentize($color-absolute-black, 0.95)
+      background-color: color.scale(vars.$color-absolute-black, $alpha: -95%)
     &:active
-      background-color: transparentize($color-absolute-black, 0.9)
+      background-color: color.scale(vars.$color-absolute-black, $alpha: -90%)
   .logo
     width: 78px
     margin: 0
@@ -70,7 +71,7 @@
       height: auto
       g
         path
-          fill: var(--color-base-alt, $color-base-alt)
+          fill: var(--color-base-alt, vars.$color-base-alt)
 @media screen and (max-width: 1920px)
   .navigation
     a
@@ -80,8 +81,8 @@
 @media screen and (max-width: 1000px)
   .navigation
     padding: 64px 64px 64px 64px
-    background-color: var(--color-base-blur, $color-base-blur)
-    backdrop-filter: $filter-blur-glow
+    background-color: var(--color-base-blur, vars.$color-base-blur)
+    backdrop-filter: vars.$filter-blur-glow
     .logo
       width: 40px
       margin: 0
@@ -137,7 +138,7 @@
             display: block
             width: 100%
             height: 1px
-            background-color: var(--color-base-alt, $color-base-alt)
+            background-color: var(--color-base-alt, vars.$color-base-alt)
             top: auto
             right: 0
             left: 0
